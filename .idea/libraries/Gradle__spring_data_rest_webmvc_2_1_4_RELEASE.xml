@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: spring-data-rest-webmvc-2.1.4.RELEASE">
+    <CLASSES>
+      <root url="jar://$M2_REPO$/org/springframework/data/spring-data-rest-webmvc/2.1.4.RELEASE/spring-data-rest-webmvc-2.1.4.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

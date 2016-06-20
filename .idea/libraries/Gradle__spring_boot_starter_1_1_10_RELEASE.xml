@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: spring-boot-starter-1.1.10.RELEASE">
+    <CLASSES>
+      <root url="jar://$M2_REPO$/org/springframework/boot/spring-boot-starter/1.1.10.RELEASE/spring-boot-starter-1.1.10.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.2.8">
+    <CLASSES>
+      <root url="jar://$M2_REPO$/nz/net/ultraq/thymeleaf/thymeleaf-layout-dialect/1.2.8/thymeleaf-layout-dialect-1.2.8.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$M2_REPO$/nz/net/ultraq/thymeleaf/thymeleaf-layout-dialect/1.2.8/thymeleaf-layout-dialect-1.2.8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$M2_REPO$/nz/net/ultraq/thymeleaf/thymeleaf-layout-dialect/1.2.8/thymeleaf-layout-dialect-1.2.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

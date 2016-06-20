@@ -1,0 +1,8 @@
+{data: [
+      ['small', 'small'],
+      ['medium', 'medium'],
+      ['large', 'large'],
+      ['extra large', 'extra large']
+    ],
+    stype: 'json'
+  }

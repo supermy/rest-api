@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: hibernate-core-4.3.7.Final">
+    <CLASSES>
+      <root url="jar://$M2_REPO$/org/hibernate/hibernate-core/4.3.7.Final/hibernate-core-4.3.7.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

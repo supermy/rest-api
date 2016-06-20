@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: tomcat-juli-7.0.57">
+    <CLASSES>
+      <root url="jar://$M2_REPO$/org/apache/tomcat/tomcat-juli/7.0.57/tomcat-juli-7.0.57.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

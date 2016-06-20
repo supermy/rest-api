@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: spring-hateoas-0.16.0.RELEASE">
+    <CLASSES>
+      <root url="jar://$M2_REPO$/org/springframework/hateoas/spring-hateoas/0.16.0.RELEASE/spring-hateoas-0.16.0.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

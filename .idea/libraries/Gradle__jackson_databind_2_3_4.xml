@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: jackson-databind-2.3.4">
+    <CLASSES>
+      <root url="jar://$M2_REPO$/com/fasterxml/jackson/core/jackson-databind/2.3.4/jackson-databind-2.3.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

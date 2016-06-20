@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: log4jdbc-1.2">
+    <CLASSES>
+      <root url="jar://$M2_REPO$/com/googlecode/log4jdbc/log4jdbc/1.2/log4jdbc-1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

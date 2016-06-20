@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: spring-expression-4.0.8.RELEASE">
+    <CLASSES>
+      <root url="jar://$M2_REPO$/org/springframework/spring-expression/4.0.8.RELEASE/spring-expression-4.0.8.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
