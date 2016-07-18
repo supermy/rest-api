@@ -212,7 +212,8 @@ Ext.define('AM.view.channel.Grid', {
                         minValue: 0,
                         maxValue: 10000
                     }
-                },
+                }
+                ,
                 {
                     text: '带宽',
                     sortable: true,
@@ -292,7 +293,7 @@ Ext.define('AM.view.channel.Grid', {
                     sortable: false,
                     menuDisabled: true,
                     items: [{
-                        icon: webserver+'/resources/images/icons/fam/delete.gif',
+                        icon: formserver+'/resources/images/icons/fam/delete.gif',
                         tooltip: '删除',
                         scope: this,
                         handler: this.onRemoveClick
@@ -304,7 +305,7 @@ Ext.define('AM.view.channel.Grid', {
                     sortable: false,
                     menuDisabled: true,
                     items: [{
-                        icon: webserver+'/resources/images/icons/fam/cog.gif',
+                        icon: formserver+'/resources/images/icons/fam/cog.gif',
                         tooltip: '编辑',
                         scope: this,
                         handler: this.onEditClick
@@ -354,10 +355,10 @@ Ext.define('AM.view.channel.Grid', {
         var rec = grid.getStore().getAt(rowIndex);
         Ext.MessageBox.confirm('提示', '确认(' + rec.get('pkId') + ")[" + rec.get('name') + ']要删除这条记录',
             callBack);
-
         function callBack(id) {
             if (id == 'yes') {
                 grid.getStore().removeAt(rowIndex);
+                Ext.getCmp('id-pagingtoobar').doRefresh();
                 if (grid.store.getCount() > 0) {
                     grid.getSelectionModel().select(0);
                 }

@@ -39,6 +39,17 @@ public interface ChannelRepository extends JpaRepository<Channel, Long>, JpaSpec
 
 //    List<Channel> findByWorkOrder(@Param("workorder") String name);
 
+    /**
+     * 数组参数查询
+     * @param code
+     * @return
+     */
+    @Query(value = "select u from Channel u where u.code in :code")
+    List<Channel> findByCodeList(@Param("code") String[] code);
+
+    @Query(value = "select u from Channel u where u.id in :pkId")
+    List<Channel> findByIdList(@Param("pkId") Long[] pkId);
+
 
     @Query(value = "select u from Channel u where u.name = :lname")
     Channel findByEmailAddress(@Param("lname") String name);

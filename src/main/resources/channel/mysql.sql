@@ -21,9 +21,9 @@ CREATE TABLE channel_auth
 
 ) comment '渠道认证表';
 
-insert into channel_auth values(1,'test','test','test',md5('testtest192.168.59.103bonc1234'),1,'192.168.59.103',300,60,100,10,1);
+insert into channel_auth values(1,'test','test','test',md5('testtest192.168.59.103xxxx1234'),1,'192.168.59.103',300,60,100,10,1);
 
 # --验证ip 地址与渠道号是否一致；
 # --验证渠道号与账号是否一致；
-# --验证渠道号+账号+ip地址+bonc1234 与令牌是否一致  [数据库的令牌，或者nginx 实时计算]
+# --验证渠道号+账号+ip地址+1234 与令牌是否一致  [数据库的令牌，或者nginx 实时计算]
 # --ip 并发控制+redis

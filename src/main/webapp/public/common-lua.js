@@ -1,9 +1,11 @@
 //设置插件路径
-var webserver="http://127.0.0.1:9006/form/rest";
-var formserver="http://127.0.0.1:9006/form/rest";
-
+//var webserver="http://127.0.0.1:9006/form/rest";
 //nginx+lua
-//var webserver="http://192.168.99.101/extjs-lua?html=route-json&query=q6";
+var webserver="http://192.168.99.101/extjsform/proxy";
+var formserver='http://192.168.99.101/extjsform';
+
+var abc=tttt;
+
 
 var pageSize=23;
 
@@ -156,33 +158,36 @@ function processResponse(success, operation, request, response, callback, scope)
         var myobjson = Ext.decode(response.responseText);//将json字符串转换为对象
     }
 
-    //后台请求成功,处理返回数据
-    if (success) {
+    if (Ext.isEmpty(myobjson["DATA"])) {
+        console.log("lua 没有进行filter 处理 ...........");
 
-        //var mystrjson2;
-        var myobjson2 = Ext.decode("{}");
-        myobjson2["DATA"] = myobjson;
+        //后台请求成功,处理返回数据
+        if (success) {
 
-        var page;
-        //对后端返回的json 进行标准化处理和封装；
+            //var mystrjson2;
+            var myobjson2 = Ext.decode("{}");
+            myobjson2["DATA"] = myobjson;
+
+            var page;
+            //对后端返回的json 进行标准化处理和封装；
             if (request.action == 'read') {
 
                 myobjson2["DATA"] = {};
                 if (!Ext.isEmpty(myobjson._embedded)) {
                     //方法1:使用正则根据filter 特征获取数据的标签;
-                    var s = request.url;
-                    var dl=new RegExp("[a-zA-z0-9]+/(filter)","i").exec(s)[0];
-                    var datalabel=/[a-zA-z0-9]+/.exec(dl)[0];
-
-                    console.log("datalabel:......",datalabel);
-                    console.log(myobjson._embedded[datalabel]);
+                    //var s = request.url;
+                    //var dl = new RegExp("[a-zA-z0-9]+/(filter)", "i").exec(s)[0];
+                    //var datalabel = /[a-zA-z0-9]+/.exec(dl)[0];
+                    //
+                    //console.log("datalabel:......", datalabel);
+                    //console.log(myobjson._embedded[datalabel]);
                     //myobjson2["DATA"] = myobjson._embedded[datalabel];
 
                     //方法2:获取json key;利用json的数据层次获取数据
-                    for(var key in myobjson._embedded) {
+                    for (var key in myobjson._embedded) {
                         console.log(key);
                         console.log(myobjson._embedded[key]);
-                        myobjson2["DATA"]=myobjson._embedded[key];
+                        myobjson2["DATA"] = myobjson._embedded[key];
                     }
                 }
 
@@ -223,14 +228,15 @@ function processResponse(success, operation, request, response, callback, scope)
 
             response.responseText = Ext.encode(myobjson2);//将json对象转换为json字符串 其中Mystrjson=Mystrjson2
 
-    } else {//后台处理失败,提示错误信息;debug = true 显示详细错误信息,显示概要描述信息.
+        } else {//后台处理失败,提示错误信息;debug = true 显示详细错误信息,显示概要描述信息.
 
-        Ext.MessageBox.alert("操作失败", myobjson.message, function (id) {
-            //var userStore = operation.getStore();
-            var userStore = Ext.getStore('Users');
-            userStore.reload();
-        });
+            Ext.MessageBox.alert("操作失败", myobjson.message, function (id) {
+                //var userStore = operation.getStore();
+                var userStore = Ext.getStore('Users');
+                userStore.reload();
+            });
 
+        }
     }
 
     //自定义--end
@@ -341,8 +347,11 @@ function afterRequest (request, success) {
     if (request.action == 'read') {
 
         //记录记录总数，标准化返回参数。
-        this.model.total = request.operation.resultSet.total;
-        console.log("记录总数:",  this.model.total);
+        if (!Ext.isEmpty(request.operation.resultSet)){
+            this.model.total = request.operation.resultSet.total;
+            console.log("记录总数:",  this.model.total);
+        }
+
 
 
         Ext.MessageBox.show({

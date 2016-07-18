@@ -58,7 +58,7 @@ public class Application  extends WebMvcConfigurerAdapter {
 //		registration.addInitParameter("singleSignOut", "true");
 //		registration.addInitParameter("skipUrls", "/out.jsp,.*\\.(css|js|jpg|jpeg|bmp|png|gif|ico)$");
 //		//out.jsp,/index.jsp,/struts/.*,/resources/*,.*\.(css|js|jpg|jpeg|bmp|png|gif|ico|less|woff|tff|woff2)$
-//		registration.addInitParameter("loginUserHandle", "com.bonc.sso.client.impl.DemoAuthHandleImpl");
+//		registration.addInitParameter("loginUserHandle", "com.xxxx.sso.client.impl.DemoAuthHandleImpl");
 //		registration.addInitParameter("encoding", "UTF-8");
 //
 //		registration.addUrlPatterns("/*");
@@ -69,7 +69,7 @@ public class Application  extends WebMvcConfigurerAdapter {
 //
 //	@Bean(name = "ssoFilter")
 //	public Filter ssoFilter() {
-//		return new com.bonc.sso.client.SSOFilter();
+//		return new com.xxxx.sso.client.SSOFilter();
 //	}
 
 	/**

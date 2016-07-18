@@ -1,5 +1,101 @@
 MobileApp
 =========
+2016-07-18
+    extjs-filter 已经移植到es-query;详见web+app;
+    清除原有filter的代码改造；
+    升级spring-boot
+    
+2016-07-14
+    
+    {"DATA":
+        [{"deleted":null,"enabled":null,"createDate":"2016-07-14T00:00:00.000+0800","createBy":"","updateDate":"2016-07-14T09:55:50.000+0800","updateBy":"","name":"xyz","code":"xyz","pwd":"\u79d8\u94a5","tokenExpire":90,"iplist":"bb","ipBindtime":300,"ipTimeout":60,"connectCount":100,"limitBandwidth":"3000","status":false,
+            "pkId":4,"_links":{"self":{"href":"http://172.16.71.56:9006/form/rest/channel_auth/filter/channel_auth/4","templated":false}},"_embedded":{}},
+         {"deleted":null,"enabled":null,"createDate":"2016-07-14T00:00:00.000+0800","createBy":"system1","updateDate":"2016-07-14T09:48:29.000+0800","updateBy":"system2","name":"test","code":"test","pwd":"test","tokenExpire":1,"iplist":"192.168.59.103","ipBindtime":300,"ipTimeout":61,"connectCount":100,"limitBandwidth":"100","status":true,
+            "pkId":1,"_links":{"self":{"href":"http://172.16.71.56:9006/form/rest/channel_auth/filter/channel_auth/1","templated":false}},"_embedded":{}},
+         {"deleted":null,"enabled":null,"createDate":"2016-07-14T00:00:00.000+0800","createBy":"","updateDate":"2016-07-14T09:55:46.000+0800","updateBy":"","name":"abc","code":"abc","pwd":"\u79d8\u94a5","tokenExpire":90,"iplist":"aa","ipBindtime":300,"ipTimeout":60,"connectCount":100,"limitBandwidth":"2000","status":false,
+            "pkId":3,"_links":{"self":{"href":"http://172.16.71.56:9006/form/rest/channel_auth/filter/channel_auth/3","templated":false}},"_embedded":{}}],
+     "PAGE":{"size":23,"totalElements":3,"totalPages":1,"number":0}}
+     
+     {"DATA":
+        {"_links":{},"_embedded":{"channel_auth":[{"deleted":null,"code":"test","pkId":1,"pwd":"test","connectCount":100,"enabled":null,"limitBandwidth":"100","ipBindtime":300,"updateBy":"system2","updateDate":"2016-07-14T09:48:29.000+0800","createDate":"2016-07-14T00:00:00.000+0800","tokenExpire":1,"_links":{"self":{"href":"http:\/\/172.16.71.56\/form\/rest\/channel_auth\/1","templated":false}},"name":"test","_embedded":{},"iplist":"192.168.59.103","createBy":"system1","status":true,"ipTimeout":61}]}},
+     "PAGE":{"page":{"totalElements":30}}}
+     
+     
+    extjs 要求的返回值
+    更新：单个记录与总记录数量
+    删除：result response:......{"DATA":{},"PAGE":{"page":{"totalElements":2}}}
+
+2016-07-13
+    http://127.0.0.1:9006/form/rest/channel_auth/search/findByIdList?pkId=1&pkId=2
+    http://172.16.71.56:9006/form/rest/channel_auth/search/findByIdList?pkId=1&pkId=2
+
+
+
+2016-07-08
+    ？？？fixme 只是filter 通过es-query,返回id-list,再通过rest-idlist 查询返回数据
+    ***idList 多个同名参数传递获得数组，可以使用hql 的in 语法进行查询；
+    http://127.0.0.1:9006/form/rest/channel_auth/search/findByCodeList?code=test&code=abc
+    
+    
+2016-07-07
+    rest-api 负责增删改；
+    es 负责查询以及全文检索；
+    spark-sql 负责大数据查询；
+    
+    http://127.0.0.1:9006/form/rest/channel_auth/filter?_dc=1467884593669&sort=name%2CASC&sort=code%2CDESC&page=0&filter=%5B%7B%22type%22%3A%22string%22%2C%22value%22%3A%22test%22%2C%22field%22%3A%22name%22%7D%2C%7B%22type%22%3A%22string%22%2C%22value%22%3A%22test%22%2C%22field%22%3A%22code%22%7D%5D&start=0&size=23
+    
+    _dc=1467884593669
+    sort=name,ASC
+    sort=code,DESC
+    page=0
+    filter=[{"type":"string","value":"test","field":"name"},
+            {"type":"string","value":"test","field":"code"}]
+    start=0
+    size=23
+    
+    
+2016-07-06
+    转移到nginx-lua 项目
+    extjs filter 参数
+    _dc:1467776408383
+    sort:name,ASC
+    sort:code,DESC
+    page:0
+    filter:[{"type":"string","value":"12","field":"name"},{"type":"string","value":"abc1","field":"code"}]
+    start:0
+    size:23
+    
+    走extjs[get]->nginx-lua[post]->直接发送到 es;
+    {
+    "query": {
+      "bool": {
+        "must": {//必须符合以下条件
+          "term": {
+            "name": "test"
+          }
+        },
+        "should": {//满足其中某个条件
+          "term": {
+            "name": "test"
+          }
+        },
+        "must_not": {//不能符合以下条件
+          "term": {
+            "code": "test1"
+          }
+        }
+      }
+    },
+    "from": 0, //分页
+    "size": 1,
+    "sort": {  //排序
+      "code": {
+        "order": "desc"
+      }
+    }
+    }
+    
+    
 2016-06-20
     todo:
     基于extjs 的查询从spring-boot 的filter 移植到es;

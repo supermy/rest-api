@@ -144,8 +144,8 @@
         <!---->
         <!-- 单点登录配置
         <dependency>
-            <groupId>com.bonc.sso</groupId>
-            <artifactId>bonc-sso-client</artifactId>
+            <groupId>com.xxxx.sso</groupId>
+            <artifactId>xxxx-sso-client</artifactId>
             <version>2.2.1</version>
         </dependency>
         <dependency>
@@ -321,7 +321,7 @@
                 </executions>
             </plugin>
 
-            <!--scala 编译-->
+            <!--scala 编译
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
@@ -356,7 +356,7 @@
                         <jvmArg>-Xmx1024m</jvmArg>
                     </jvmArgs>
                 </configuration>
-            </plugin>
+            </plugin>-->
 
         </plugins>
     </build>

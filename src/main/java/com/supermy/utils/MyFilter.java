@@ -234,7 +234,9 @@ public class MyFilter<T> {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        String filter = "[{\"type\":\"date\",\"comparison\":\"gt\",\"value\":\"2014-06-07\",\"field\":\"cdate\"},{\"type\":\"date\",\"comparison\":\"lt\",\"value\":\"2014-06-09\",\"field\":\"udate\"},{\"type\":\"string\",\"value\":\"快卡\",\"field\":\"name\"}]";
+        String filter = "[{\"type\":\"date\",\"comparison\":\"gt\",\"value\":\"2014-06-07\",\"field\":\"cdate\"}," +
+                         "{\"type\":\"date\",\"comparison\":\"lt\",\"value\":\"2014-06-09\",\"field\":\"udate\"}," +
+                         "{\"type\":\"string\",\"value\":\"快卡\",\"field\":\"name\"}]";
 
         MyFilter f = new MyFilter(filter);
 

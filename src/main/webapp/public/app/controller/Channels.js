@@ -58,6 +58,7 @@ Ext.define('AM.controller.Channels', {
             ipTimeout: 60,
             connectCount: 100,
             limitBandwidth: 10,
+            iplist: '6.6.8.8',
             status: false,
             createDate: new Date(),
             updateDate: new Date()
