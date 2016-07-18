@@ -61,6 +61,7 @@ import org.springframework.util.Assert;
  * @param <T> the type of the entity to handle
  * @param <ID> the type of the entity's identifier
  */
+@Deprecated
 @Repository
 @Transactional(readOnly = true)
 public class SimpleJpaRepository<T, ID extends Serializable> implements JpaRepository<T, ID>,

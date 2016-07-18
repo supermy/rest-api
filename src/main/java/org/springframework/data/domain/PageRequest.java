@@ -24,6 +24,7 @@ import org.springframework.data.domain.Sort.Direction;
  * @author Oliver Gierke
  * @author Thomas Darimont
  */
+@Deprecated
 public class PageRequest extends AbstractPageRequest {
 
     private static final long serialVersionUID = -4541509938956089562L;

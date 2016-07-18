@@ -57,6 +57,7 @@ import static org.springframework.data.rest.webmvc.ControllerUtils.EMPTY_RESOURC
  * @author Oliver Gierke
  */
 @SuppressWarnings({ "rawtypes" })
+@Deprecated
 public class AbstractRepositoryRestController implements MessageSourceAware {
 
     private static final Logger LOG = LoggerFactory.getLogger(AbstractRepositoryRestController.class);

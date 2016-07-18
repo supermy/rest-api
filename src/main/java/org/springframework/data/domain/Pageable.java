@@ -8,6 +8,7 @@ import com.supermy.utils.MyFilter;
  *
  * @author Oliver Gierke
  */
+@Deprecated
 public interface Pageable {
     MyFilter getFilter();
 

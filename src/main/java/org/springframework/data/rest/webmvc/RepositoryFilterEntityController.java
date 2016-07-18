@@ -67,6 +67,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author Oliver Gierke
  * @author Greg Turnquist
  */
+@Deprecated
 @RepositoryRestController
 class RepositoryFilterEntityController extends AbstractRepositoryRestController implements ApplicationEventPublisherAware {
 
