@@ -1,9 +1,39 @@
 MobileApp
 =========
+2016-07-19
+    增加健康控制：
+    http://127.0.0.1:9006/form/rest/health
+    http://127.0.0.1:9006/form/rest/trace
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+            </dependency>
+    更新测试方案
+        @RunWith(SpringJUnit4ClassRunner.class)
+        @SpringApplicationConfiguration(classes = Application.class)
+        @WebAppConfiguration
+        public class MongoDBGeoSpatialTest {
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+     
+    
+    
 2016-07-18
+    todo:
+        rbac 数据准备与api 准备；
+        
+    微服务基础框架准备已经完成。
+    
     extjs-filter 已经移植到es-query;详见web+app;
-    清除原有filter的代码改造；
-    升级spring-boot
+    清除原有filter的代码改造 ok；
+    升级spring-boot1.2.7 ok;
+    升级spring-boot1.3.5 ok;
+    
+    
     
 2016-07-14
     

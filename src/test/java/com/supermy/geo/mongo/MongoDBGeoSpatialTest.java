@@ -6,11 +6,13 @@ import static org.junit.Assert.assertThat;
 
 import java.util.List;
 
+import com.supermy.Application;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.data.geo.Circle;
 import org.springframework.data.geo.Distance;
 import org.springframework.data.geo.Metrics;
@@ -19,16 +21,15 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.index.GeospatialIndex;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 
 
 /**
- * Tests for Spring Data MongoDB - Geospatial queries.
  *
- * @author <a href="http://blog.codecentric.de/en/author/tobias-trelle">Tobias
- *         Trelle</a>
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration
+@SpringApplicationConfiguration(classes = Application.class)
+@WebAppConfiguration
 public class MongoDBGeoSpatialTest {
 
     private static final Point DUS = new Point( 6.810036, 51.224088 );
