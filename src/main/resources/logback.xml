@@ -21,7 +21,7 @@
 
 	<!-- project default level -->
 	<logger name="org.springframework.data.rest" level="DEBUG" />
-	<logger name="org.springframework.boot.actuate" level="DEBUG" />
+	<!--<logger name="org.springframework.boot.actuate" level="DEBUG" />-->
 	<logger name="org.springframework.security" level="ERROR" />
 
 

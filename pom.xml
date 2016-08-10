@@ -42,12 +42,13 @@
     <dependencies>
 
         <!-- 监控
-Spring Boot还提供了很多高阶线上JMX功能， 可以用HTTP端口来管理，监控我们的应用。并且提供了一些自动监控，健康报表，这个对于运维来说比较实用。
+            Spring Boot还提供了很多高阶线上JMX功能， 可以用HTTP端口来管理，监控我们的应用。并且提供了一些自动监控，健康报表，这个对于运维来说比较实用。
         -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -119,24 +120,26 @@ Spring Boot还提供了很多高阶线上JMX功能， 可以用HTTP端口来管�
         <!--</dependency>-->
 
 
-        <!--netty io 异步通信 -->
+        <!--netty io 异步通信
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>4.0.36.Final</version>
             <scope>compile</scope>
         </dependency>
+        -->
 
-        <!--org.mongodb 异步通信 -->
+        <!--org.mongodb 异步通信 先注销，特别场景下使用
 
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-async</artifactId>
             <version>3.2.0</version>
         </dependency>
+        -->
 
 
-
+        <!-- spring 框架依赖自带-->
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
@@ -176,15 +179,17 @@ Spring Boot还提供了很多高阶线上JMX功能， 可以用HTTP端口来管�
             <!--<version>4.3.4.Final</version>-->
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-web</artifactId>-->
+        <!--</dependency>-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
         </dependency>
+
 
         <!-- 消费者 -->
         <dependency>
@@ -210,10 +215,18 @@ Spring Boot还提供了很多高阶线上JMX功能， 可以用HTTP端口来管�
             <version>0.6.0</version>
         </dependency>
 
+        <!--
+        包含 spring-boot-starter-web
+        关于spring-boot-starter-web等的依赖就可以去掉了，
+        因为spring-boot-starter-thymeleaf是包含这些依赖的。
+
+        不支持json
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+
         <!-- tag::security[] -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -280,16 +293,16 @@ Spring Boot还提供了很多高阶线上JMX功能， 可以用HTTP端口来管�
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.hibernate.javax.persistence</groupId>
-                    <artifactId>hibernate-jpa-2.1-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.hibernate.javax.persistence</groupId>
-                    <artifactId>org.hibernate.javax.persistence</artifactId>
-                </exclusion>
-            </exclusions>
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>org.hibernate.javax.persistence</groupId>-->
+                    <!--<artifactId>hibernate-jpa-2.1-api</artifactId>-->
+                <!--</exclusion>-->
+                <!--<exclusion>-->
+                    <!--<groupId>org.hibernate.javax.persistence</groupId>-->
+                    <!--<artifactId>org.hibernate.javax.persistence</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
         </dependency>
 
         <dependency>
@@ -327,7 +340,7 @@ Spring Boot还提供了很多高阶线上JMX功能， 可以用HTTP端口来管�
                 </executions>
             </plugin>
 
-            <!--scala 编译
+            <!--scala 编译-->
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
@@ -362,7 +375,7 @@ Spring Boot还提供了很多高阶线上JMX功能， 可以用HTTP端口来管�
                         <jvmArg>-Xmx1024m</jvmArg>
                     </jvmArgs>
                 </configuration>
-            </plugin>-->
+            </plugin>
 
         </plugins>
     </build>

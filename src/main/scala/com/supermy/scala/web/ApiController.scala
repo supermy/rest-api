@@ -22,5 +22,4 @@ class ApiController {
     message.value = "Hello, Scala for Spring!"
     message
   }
-
 }

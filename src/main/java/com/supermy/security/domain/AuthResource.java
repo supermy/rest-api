@@ -16,7 +16,7 @@ public class AuthResource extends BaseObj{
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "auth_id", nullable = false)
-    private Authorities auth;
+    private Authority auth;
 
     @Column(name = "res", nullable = false, length = 45)
     private String res;
@@ -24,16 +24,16 @@ public class AuthResource extends BaseObj{
     public AuthResource() {
     }
 
-    public AuthResource(Authorities auth, String res) {
+    public AuthResource(Authority auth, String res) {
         this.auth = auth;
         this.res = res;
     }
 
-    public Authorities getAuth() {
+    public Authority getAuth() {
         return auth;
     }
 
-    public void setAuth(Authorities auth) {
+    public void setAuth(Authority auth) {
         this.auth = auth;
     }
 

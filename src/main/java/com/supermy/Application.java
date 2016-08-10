@@ -3,7 +3,6 @@ package com.supermy;
 import com.supermy.db.DataBaseConfig;
 //import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
 //import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
-import com.supermy.geo.SimpleChatClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

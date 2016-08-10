@@ -16,846 +16,727 @@
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
       <schema id="1" name="hibnatedb"/>
-      <table id="2" parent="1" name="Child"/>
-      <table id="3" parent="1" name="Parent"/>
-      <table id="4" parent="1" name="Person"/>
-      <table id="5" parent="1" name="channel_auth"/>
-      <table id="6" parent="1" name="my_auth_resources"/>
-      <table id="7" parent="1" name="my_auths"/>
-      <table id="8" parent="1" name="my_group_roles"/>
-      <table id="9" parent="1" name="my_groups"/>
-      <table id="10" parent="1" name="my_modules"/>
-      <table id="11" parent="1" name="my_resources"/>
-      <table id="12" parent="1" name="my_role_auths"/>
-      <table id="13" parent="1" name="my_roles"/>
-      <table id="14" parent="1" name="my_user_groups"/>
-      <table id="15" parent="1" name="my_user_roles"/>
-      <table id="16" parent="1" name="my_users"/>
-      <table id="17" parent="1" name="t_child"/>
-      <table id="18" parent="1" name="t_parent"/>
-      <table id="19" parent="1" name="t_person"/>
-      <table id="20" parent="1" name="table_name"/>
-      <column id="21" parent="2" name="id">
+      <table id="2" parent="1" name="channel_auth"/>
+      <table id="3" parent="1" name="my_auth_resources"/>
+      <table id="4" parent="1" name="my_auths"/>
+      <table id="5" parent="1" name="my_group_roles"/>
+      <table id="6" parent="1" name="my_groups"/>
+      <table id="7" parent="1" name="my_modules"/>
+      <table id="8" parent="1" name="my_resources"/>
+      <table id="9" parent="1" name="my_role_auths"/>
+      <table id="10" parent="1" name="my_roles"/>
+      <table id="11" parent="1" name="my_user_groups"/>
+      <table id="12" parent="1" name="my_user_roles"/>
+      <table id="13" parent="1" name="my_users"/>
+      <table id="14" parent="1" name="t_child"/>
+      <table id="15" parent="1" name="t_parent"/>
+      <table id="16" parent="1" name="t_person"/>
+      <column id="17" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="22" parent="2" name="createBy">
+      <column id="18" parent="2" name="createBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="23" parent="2" name="createDate">
-        <data-type>date</data-type>
-      </column>
-      <column id="24" parent="2" name="deleted">
-        <data-type>bit(1)</data-type>
-      </column>
-      <column id="25" parent="2" name="enabled">
-        <data-type>bit(1)</data-type>
-      </column>
-      <column id="26" parent="2" name="updateBy">
-        <data-type>varchar(20)</data-type>
-      </column>
-      <column id="27" parent="2" name="updateDate">
+      <column id="19" parent="2" name="createDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="28" parent="2" name="code">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="29" parent="2" name="name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="30" parent="2" name="parent_id">
-        <mandatory>1</mandatory>
-        <data-type>bigint(20)</data-type>
-      </column>
-      <index id="31" parent="2" name="FK_brdu62k68g5na7l6ek9a75h1q">
-        <columns>parent_id</columns>
-        <desc-columns></desc-columns>
-      </index>
-      <key id="32" parent="2" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <foreign-key id="33" parent="2" name="FK_brdu62k68g5na7l6ek9a75h1q">
-        <columns>parent_id</columns>
-        <ref-key>~.Parent.PRIMARY</ref-key>
-        <cascade-update-rule>restrict</cascade-update-rule>
-        <cascade-delete-rule>restrict</cascade-delete-rule>
-      </foreign-key>
-      <column id="34" parent="3" name="id">
-        <mandatory>1</mandatory>
-        <data-type>bigint(20)</data-type>
-      </column>
-      <column id="35" parent="3" name="createBy">
-        <data-type>varchar(20)</data-type>
-      </column>
-      <column id="36" parent="3" name="createDate">
-        <data-type>date</data-type>
-      </column>
-      <column id="37" parent="3" name="deleted">
+      <column id="20" parent="2" name="deleted">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="38" parent="3" name="enabled">
+      <column id="21" parent="2" name="enabled">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="39" parent="3" name="updateBy">
+      <column id="22" parent="2" name="updateBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="40" parent="3" name="updateDate">
+      <column id="23" parent="2" name="updateDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="41" parent="3" name="code">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="42" parent="3" name="name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="43" parent="3" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="44" parent="4" name="id">
-        <mandatory>1</mandatory>
-        <data-type>bigint(20)</data-type>
-      </column>
-      <column id="45" parent="4" name="createBy">
+      <column id="24" parent="2" name="code">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="46" parent="4" name="createDate">
-        <data-type>date</data-type>
-      </column>
-      <column id="47" parent="4" name="deleted">
-        <data-type>bit(1)</data-type>
-      </column>
-      <column id="48" parent="4" name="enabled">
-        <data-type>bit(1)</data-type>
-      </column>
-      <column id="49" parent="4" name="updateBy">
-        <data-type>varchar(20)</data-type>
-      </column>
-      <column id="50" parent="4" name="updateDate">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="51" parent="4" name="firstName">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="52" parent="4" name="lastName">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="53" parent="4" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="54" parent="5" name="id">
-        <mandatory>1</mandatory>
-        <data-type>bigint(20)</data-type>
-      </column>
-      <column id="55" parent="5" name="createBy">
-        <data-type>varchar(20)</data-type>
-      </column>
-      <column id="56" parent="5" name="createDate">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="57" parent="5" name="deleted">
-        <data-type>bit(1)</data-type>
-      </column>
-      <column id="58" parent="5" name="enabled">
-        <data-type>bit(1)</data-type>
-      </column>
-      <column id="59" parent="5" name="updateBy">
-        <data-type>varchar(20)</data-type>
-      </column>
-      <column id="60" parent="5" name="updateDate">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="61" parent="5" name="code">
-        <data-type>varchar(20)</data-type>
-      </column>
-      <column id="62" parent="5" name="connect_count">
+      <column id="25" parent="2" name="connect_count">
         <data-type>int(11)</data-type>
       </column>
-      <column id="63" parent="5" name="ip_bind_time">
+      <column id="26" parent="2" name="ip_bind_time">
         <data-type>int(11)</data-type>
       </column>
-      <column id="64" parent="5" name="ip_time_out">
+      <column id="27" parent="2" name="ip_time_out">
         <data-type>int(11)</data-type>
       </column>
-      <column id="65" parent="5" name="iplist">
+      <column id="28" parent="2" name="iplist">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="66" parent="5" name="limit_bandwidth">
+      <column id="29" parent="2" name="limit_bandwidth">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="67" parent="5" name="name">
+      <column id="30" parent="2" name="name">
         <data-type>varchar(200)</data-type>
       </column>
-      <column id="68" parent="5" name="pwd">
+      <column id="31" parent="2" name="pwd">
         <data-type>varchar(32)</data-type>
       </column>
-      <column id="69" parent="5" name="status">
+      <column id="32" parent="2" name="status">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="70" parent="5" name="token">
+      <column id="33" parent="2" name="token">
         <data-type>varchar(32)</data-type>
       </column>
-      <column id="71" parent="5" name="token_expire">
+      <column id="34" parent="2" name="token_expire">
         <data-type>int(11)</data-type>
       </column>
-      <key id="72" parent="5" name="PRIMARY">
+      <key id="35" parent="2" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="73" parent="6" name="id">
+      <column id="36" parent="3" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="74" parent="6" name="createBy">
+      <column id="37" parent="3" name="createBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="75" parent="6" name="createDate">
+      <column id="38" parent="3" name="createDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="76" parent="6" name="deleted">
+      <column id="39" parent="3" name="deleted">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="77" parent="6" name="enabled">
+      <column id="40" parent="3" name="enabled">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="78" parent="6" name="updateBy">
+      <column id="41" parent="3" name="updateBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="79" parent="6" name="updateDate">
+      <column id="42" parent="3" name="updateDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="80" parent="6" name="res">
+      <column id="43" parent="3" name="res">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="81" parent="6" name="auth_id">
+      <column id="44" parent="3" name="auth_id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <index id="82" parent="6" name="UK_r4pxja2y3qcf0kxhbd8fetck4">
+      <index id="45" parent="3" name="UK_r4pxja2y3qcf0kxhbd8fetck4">
         <columns>auth_id
 res</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="83" parent="6" name="PRIMARY">
+      <key id="46" parent="3" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="84" parent="6" name="UK_r4pxja2y3qcf0kxhbd8fetck4">
+      <key id="47" parent="3" name="UK_r4pxja2y3qcf0kxhbd8fetck4">
         <columns>auth_id
 res</columns>
         <underlying-index>UK_r4pxja2y3qcf0kxhbd8fetck4</underlying-index>
       </key>
-      <foreign-key id="85" parent="6" name="FK_3u1is9yp6cisceo7te8jk2rv6">
+      <foreign-key id="48" parent="3" name="FK_3u1is9yp6cisceo7te8jk2rv6">
         <columns>auth_id</columns>
         <ref-key>~.my_auths.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="86" parent="7" name="id">
+      <column id="49" parent="4" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="87" parent="7" name="createBy">
+      <column id="50" parent="4" name="createBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="88" parent="7" name="createDate">
+      <column id="51" parent="4" name="createDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="89" parent="7" name="deleted">
+      <column id="52" parent="4" name="deleted">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="90" parent="7" name="enabled">
+      <column id="53" parent="4" name="enabled">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="91" parent="7" name="updateBy">
+      <column id="54" parent="4" name="updateBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="92" parent="7" name="updateDate">
+      <column id="55" parent="4" name="updateDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="93" parent="7" name="module">
+      <column id="56" parent="4" name="module">
         <mandatory>1</mandatory>
         <data-type>varchar(10)</data-type>
       </column>
-      <column id="94" parent="7" name="name">
+      <column id="57" parent="4" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="95" parent="7" name="remark">
+      <column id="58" parent="4" name="remark">
         <data-type>varchar(220)</data-type>
       </column>
-      <index id="96" parent="7" name="UK_5juw704j0ep1s07b5nq96fyhw">
+      <index id="59" parent="4" name="UK_5juw704j0ep1s07b5nq96fyhw">
         <columns>name</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="97" parent="7" name="PRIMARY">
+      <key id="60" parent="4" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="98" parent="7" name="UK_5juw704j0ep1s07b5nq96fyhw">
+      <key id="61" parent="4" name="UK_5juw704j0ep1s07b5nq96fyhw">
         <columns>name</columns>
         <underlying-index>UK_5juw704j0ep1s07b5nq96fyhw</underlying-index>
       </key>
-      <column id="99" parent="8" name="id">
+      <column id="62" parent="5" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="100" parent="8" name="createBy">
+      <column id="63" parent="5" name="createBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="101" parent="8" name="createDate">
+      <column id="64" parent="5" name="createDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="102" parent="8" name="deleted">
+      <column id="65" parent="5" name="deleted">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="103" parent="8" name="enabled">
+      <column id="66" parent="5" name="enabled">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="104" parent="8" name="updateBy">
+      <column id="67" parent="5" name="updateBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="105" parent="8" name="updateDate">
+      <column id="68" parent="5" name="updateDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="106" parent="8" name="role">
+      <column id="69" parent="5" name="role">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="107" parent="8" name="group_">
+      <column id="70" parent="5" name="group_id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <index id="108" parent="8" name="FK_ru8a03seggb8xoguatc534ama">
-        <columns>group_</columns>
+      <index id="71" parent="5" name="FK_g0nvll3tc89k603s0ts0rluj9">
+        <columns>group_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="109" parent="8" name="UK_n65rt3sgo4415mlge8u314wl3">
+      <index id="72" parent="5" name="UK_avejkd9rf35sddkty3ckep4fj">
         <columns>role
-group_</columns>
+group_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="110" parent="8" name="PRIMARY">
+      <key id="73" parent="5" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="111" parent="8" name="UK_n65rt3sgo4415mlge8u314wl3">
+      <key id="74" parent="5" name="UK_avejkd9rf35sddkty3ckep4fj">
         <columns>role
-group_</columns>
-        <underlying-index>UK_n65rt3sgo4415mlge8u314wl3</underlying-index>
+group_id</columns>
+        <underlying-index>UK_avejkd9rf35sddkty3ckep4fj</underlying-index>
       </key>
-      <foreign-key id="112" parent="8" name="FK_ru8a03seggb8xoguatc534ama">
-        <columns>group_</columns>
+      <foreign-key id="75" parent="5" name="FK_g0nvll3tc89k603s0ts0rluj9">
+        <columns>group_id</columns>
         <ref-key>~.my_groups.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="113" parent="9" name="id">
+      <column id="76" parent="6" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="114" parent="9" name="createBy">
+      <column id="77" parent="6" name="createBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="115" parent="9" name="createDate">
+      <column id="78" parent="6" name="createDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="116" parent="9" name="deleted">
+      <column id="79" parent="6" name="deleted">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="117" parent="9" name="enabled">
+      <column id="80" parent="6" name="enabled">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="118" parent="9" name="updateBy">
+      <column id="81" parent="6" name="updateBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="119" parent="9" name="updateDate">
+      <column id="82" parent="6" name="updateDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="120" parent="9" name="group_">
+      <column id="83" parent="6" name="group_">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="121" parent="9" name="name">
+      <column id="84" parent="6" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="122" parent="9" name="principal">
+      <column id="85" parent="6" name="principal">
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="123" parent="9" name="remark">
+      <column id="86" parent="6" name="remark">
         <data-type>varchar(220)</data-type>
       </column>
-      <index id="124" parent="9" name="UK_r34u6t9vv0k2qilclltulgs84">
+      <index id="87" parent="6" name="UK_r34u6t9vv0k2qilclltulgs84">
         <columns>group_</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="125" parent="9" name="PRIMARY">
+      <key id="88" parent="6" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="126" parent="9" name="UK_r34u6t9vv0k2qilclltulgs84">
+      <key id="89" parent="6" name="UK_r34u6t9vv0k2qilclltulgs84">
         <columns>group_</columns>
         <underlying-index>UK_r34u6t9vv0k2qilclltulgs84</underlying-index>
       </key>
-      <column id="127" parent="10" name="id">
+      <column id="90" parent="7" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="128" parent="10" name="createBy">
+      <column id="91" parent="7" name="createBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="129" parent="10" name="createDate">
+      <column id="92" parent="7" name="createDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="130" parent="10" name="deleted">
+      <column id="93" parent="7" name="deleted">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="131" parent="10" name="enabled">
+      <column id="94" parent="7" name="enabled">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="132" parent="10" name="updateBy">
+      <column id="95" parent="7" name="updateBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="133" parent="10" name="updateDate">
+      <column id="96" parent="7" name="updateDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="134" parent="10" name="code">
+      <column id="97" parent="7" name="code">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="135" parent="10" name="name">
+      <column id="98" parent="7" name="name">
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="136" parent="10" name="remark">
+      <column id="99" parent="7" name="remark">
         <data-type>varchar(200)</data-type>
       </column>
-      <index id="137" parent="10" name="UK_7bw5yhfa25xgqm9twg91d9dk4">
+      <index id="100" parent="7" name="UK_7bw5yhfa25xgqm9twg91d9dk4">
         <columns>code</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="138" parent="10" name="PRIMARY">
+      <key id="101" parent="7" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="139" parent="10" name="UK_7bw5yhfa25xgqm9twg91d9dk4">
+      <key id="102" parent="7" name="UK_7bw5yhfa25xgqm9twg91d9dk4">
         <columns>code</columns>
         <underlying-index>UK_7bw5yhfa25xgqm9twg91d9dk4</underlying-index>
       </key>
-      <column id="140" parent="11" name="id">
+      <column id="103" parent="8" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="141" parent="11" name="createBy">
+      <column id="104" parent="8" name="createBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="142" parent="11" name="createDate">
+      <column id="105" parent="8" name="createDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="143" parent="11" name="deleted">
+      <column id="106" parent="8" name="deleted">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="144" parent="11" name="enabled">
+      <column id="107" parent="8" name="enabled">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="145" parent="11" name="updateBy">
+      <column id="108" parent="8" name="updateBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="146" parent="11" name="updateDate">
+      <column id="109" parent="8" name="updateDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="147" parent="11" name="module">
+      <column id="110" parent="8" name="module">
         <mandatory>1</mandatory>
         <data-type>varchar(10)</data-type>
       </column>
-      <column id="148" parent="11" name="name">
+      <column id="111" parent="8" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="149" parent="11" name="remark">
+      <column id="112" parent="8" name="remark">
         <data-type>varchar(200)</data-type>
       </column>
-      <column id="150" parent="11" name="type">
+      <column id="113" parent="8" name="type">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="151" parent="11" name="uri">
+      <column id="114" parent="8" name="uri">
         <mandatory>1</mandatory>
         <data-type>varchar(230)</data-type>
       </column>
-      <key id="152" parent="11" name="PRIMARY">
+      <key id="115" parent="8" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="153" parent="12" name="id">
+      <column id="116" parent="9" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="154" parent="12" name="createBy">
+      <column id="117" parent="9" name="createBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="155" parent="12" name="createDate">
+      <column id="118" parent="9" name="createDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="156" parent="12" name="deleted">
+      <column id="119" parent="9" name="deleted">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="157" parent="12" name="enabled">
+      <column id="120" parent="9" name="enabled">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="158" parent="12" name="updateBy">
+      <column id="121" parent="9" name="updateBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="159" parent="12" name="updateDate">
+      <column id="122" parent="9" name="updateDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="160" parent="12" name="auth">
+      <column id="123" parent="9" name="auth">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="161" parent="12" name="role_id">
+      <column id="124" parent="9" name="role_id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <index id="162" parent="12" name="UK_61xarsxrtscliel1mc5u507rh">
+      <index id="125" parent="9" name="UK_61xarsxrtscliel1mc5u507rh">
         <columns>role_id
 auth</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="163" parent="12" name="PRIMARY">
+      <key id="126" parent="9" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="164" parent="12" name="UK_61xarsxrtscliel1mc5u507rh">
+      <key id="127" parent="9" name="UK_61xarsxrtscliel1mc5u507rh">
         <columns>role_id
 auth</columns>
         <underlying-index>UK_61xarsxrtscliel1mc5u507rh</underlying-index>
       </key>
-      <foreign-key id="165" parent="12" name="FK_ioj53kylyv87kqejahr9xladx">
+      <foreign-key id="128" parent="9" name="FK_ioj53kylyv87kqejahr9xladx">
         <columns>role_id</columns>
         <ref-key>~.my_roles.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="166" parent="13" name="id">
+      <column id="129" parent="10" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="167" parent="13" name="createBy">
+      <column id="130" parent="10" name="createBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="168" parent="13" name="createDate">
+      <column id="131" parent="10" name="createDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="169" parent="13" name="deleted">
+      <column id="132" parent="10" name="deleted">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="170" parent="13" name="enabled">
+      <column id="133" parent="10" name="enabled">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="171" parent="13" name="updateBy">
+      <column id="134" parent="10" name="updateBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="172" parent="13" name="updateDate">
+      <column id="135" parent="10" name="updateDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="173" parent="13" name="name">
+      <column id="136" parent="10" name="name">
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="174" parent="13" name="remark">
+      <column id="137" parent="10" name="remark">
         <data-type>varchar(200)</data-type>
       </column>
-      <column id="175" parent="13" name="role">
+      <column id="138" parent="10" name="role">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <index id="176" parent="13" name="UK_26d71f4pf84h0lqagwrmifiri">
+      <index id="139" parent="10" name="UK_26d71f4pf84h0lqagwrmifiri">
         <columns>role</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="177" parent="13" name="PRIMARY">
+      <key id="140" parent="10" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="178" parent="13" name="UK_26d71f4pf84h0lqagwrmifiri">
+      <key id="141" parent="10" name="UK_26d71f4pf84h0lqagwrmifiri">
         <columns>role</columns>
         <underlying-index>UK_26d71f4pf84h0lqagwrmifiri</underlying-index>
       </key>
-      <column id="179" parent="14" name="id">
+      <column id="142" parent="11" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="180" parent="14" name="createBy">
+      <column id="143" parent="11" name="createBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="181" parent="14" name="createDate">
+      <column id="144" parent="11" name="createDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="182" parent="14" name="deleted">
+      <column id="145" parent="11" name="deleted">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="183" parent="14" name="enabled">
+      <column id="146" parent="11" name="enabled">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="184" parent="14" name="updateBy">
+      <column id="147" parent="11" name="updateBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="185" parent="14" name="updateDate">
+      <column id="148" parent="11" name="updateDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="186" parent="14" name="group_">
+      <column id="149" parent="11" name="group_">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="187" parent="14" name="username">
+      <column id="150" parent="11" name="user_id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <index id="188" parent="14" name="FK_br0djy4lq1l0t5m0w5vhdcfrh">
-        <columns>username</columns>
+      <index id="151" parent="11" name="FK_ianheo7d00j7936vn2hp7tr9j">
+        <columns>user_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="189" parent="14" name="UK_9ug3ga8jdt7kbf3e38wbe1x7d">
+      <index id="152" parent="11" name="UK_4281y244g4v3ois9dwlqv1ibg">
         <columns>group_
-username</columns>
+user_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="190" parent="14" name="PRIMARY">
+      <key id="153" parent="11" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="191" parent="14" name="UK_9ug3ga8jdt7kbf3e38wbe1x7d">
+      <key id="154" parent="11" name="UK_4281y244g4v3ois9dwlqv1ibg">
         <columns>group_
-username</columns>
-        <underlying-index>UK_9ug3ga8jdt7kbf3e38wbe1x7d</underlying-index>
+user_id</columns>
+        <underlying-index>UK_4281y244g4v3ois9dwlqv1ibg</underlying-index>
       </key>
-      <foreign-key id="192" parent="14" name="FK_br0djy4lq1l0t5m0w5vhdcfrh">
-        <columns>username</columns>
+      <foreign-key id="155" parent="11" name="FK_ianheo7d00j7936vn2hp7tr9j">
+        <columns>user_id</columns>
         <ref-key>~.my_users.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="193" parent="15" name="user_role_id">
+      <column id="156" parent="12" name="user_role_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="194" parent="15" name="role">
+      <column id="157" parent="12" name="role">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="195" parent="15" name="user_id">
+      <column id="158" parent="12" name="user_id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <index id="196" parent="15" name="FK_g3fh7e90q1jg2fdhpnoh1j2fd">
+      <index id="159" parent="12" name="FK_g3fh7e90q1jg2fdhpnoh1j2fd">
         <columns>user_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="197" parent="15" name="UK_ct6tf33kq8j4urmnvubnek247">
+      <index id="160" parent="12" name="UK_ct6tf33kq8j4urmnvubnek247">
         <columns>role
 user_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="198" parent="15" name="PRIMARY">
+      <key id="161" parent="12" name="PRIMARY">
         <columns>user_role_id</columns>
         <primary>1</primary>
       </key>
-      <key id="199" parent="15" name="UK_ct6tf33kq8j4urmnvubnek247">
+      <key id="162" parent="12" name="UK_ct6tf33kq8j4urmnvubnek247">
         <columns>role
 user_id</columns>
         <underlying-index>UK_ct6tf33kq8j4urmnvubnek247</underlying-index>
       </key>
-      <foreign-key id="200" parent="15" name="FK_g3fh7e90q1jg2fdhpnoh1j2fd">
+      <foreign-key id="163" parent="12" name="FK_g3fh7e90q1jg2fdhpnoh1j2fd">
         <columns>user_id</columns>
         <ref-key>~.my_users.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="201" parent="16" name="id">
+      <column id="164" parent="13" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="202" parent="16" name="createBy">
+      <column id="165" parent="13" name="createBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="203" parent="16" name="createDate">
+      <column id="166" parent="13" name="createDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="204" parent="16" name="deleted">
+      <column id="167" parent="13" name="deleted">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="205" parent="16" name="enabled">
+      <column id="168" parent="13" name="enabled">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="206" parent="16" name="updateBy">
+      <column id="169" parent="13" name="updateBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="207" parent="16" name="updateDate">
+      <column id="170" parent="13" name="updateDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="208" parent="16" name="email">
+      <column id="171" parent="13" name="email">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="209" parent="16" name="namecn">
+      <column id="172" parent="13" name="namecn">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="210" parent="16" name="password">
+      <column id="173" parent="13" name="password">
         <mandatory>1</mandatory>
         <data-type>varchar(60)</data-type>
       </column>
-      <column id="211" parent="16" name="qq">
+      <column id="174" parent="13" name="qq">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="212" parent="16" name="tel">
+      <column id="175" parent="13" name="tel">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="213" parent="16" name="username">
+      <column id="176" parent="13" name="username">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="214" parent="16" name="weixin">
+      <column id="177" parent="13" name="weixin">
         <data-type>varchar(255)</data-type>
       </column>
-      <index id="215" parent="16" name="UK_32gjj9qcsg7xdihiovixh3xcu">
+      <index id="178" parent="13" name="UK_32gjj9qcsg7xdihiovixh3xcu">
         <columns>username</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="216" parent="16" name="PRIMARY">
+      <key id="179" parent="13" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="217" parent="16" name="UK_32gjj9qcsg7xdihiovixh3xcu">
+      <key id="180" parent="13" name="UK_32gjj9qcsg7xdihiovixh3xcu">
         <columns>username</columns>
         <underlying-index>UK_32gjj9qcsg7xdihiovixh3xcu</underlying-index>
       </key>
-      <column id="218" parent="17" name="id">
+      <column id="181" parent="14" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="219" parent="17" name="createBy">
+      <column id="182" parent="14" name="createBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="220" parent="17" name="createDate">
+      <column id="183" parent="14" name="createDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="221" parent="17" name="deleted">
+      <column id="184" parent="14" name="deleted">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="222" parent="17" name="enabled">
+      <column id="185" parent="14" name="enabled">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="223" parent="17" name="updateBy">
+      <column id="186" parent="14" name="updateBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="224" parent="17" name="updateDate">
+      <column id="187" parent="14" name="updateDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="225" parent="17" name="code">
+      <column id="188" parent="14" name="code">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="226" parent="17" name="name">
+      <column id="189" parent="14" name="name">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="227" parent="17" name="parent_id">
+      <column id="190" parent="14" name="parent_id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <index id="228" parent="17" name="FK_c4n2ir4dfihwkio64dqq7loln">
+      <index id="191" parent="14" name="FK_c4n2ir4dfihwkio64dqq7loln">
         <columns>parent_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="229" parent="17" name="PRIMARY">
+      <key id="192" parent="14" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="230" parent="17" name="FK_c4n2ir4dfihwkio64dqq7loln">
+      <foreign-key id="193" parent="14" name="FK_c4n2ir4dfihwkio64dqq7loln">
         <columns>parent_id</columns>
         <ref-key>~.t_parent.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="231" parent="18" name="id">
+      <column id="194" parent="15" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="232" parent="18" name="createBy">
+      <column id="195" parent="15" name="createBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="233" parent="18" name="createDate">
+      <column id="196" parent="15" name="createDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="234" parent="18" name="deleted">
+      <column id="197" parent="15" name="deleted">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="235" parent="18" name="enabled">
+      <column id="198" parent="15" name="enabled">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="236" parent="18" name="updateBy">
+      <column id="199" parent="15" name="updateBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="237" parent="18" name="updateDate">
+      <column id="200" parent="15" name="updateDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="238" parent="18" name="code">
+      <column id="201" parent="15" name="code">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="239" parent="18" name="name">
+      <column id="202" parent="15" name="name">
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="240" parent="18" name="PRIMARY">
+      <key id="203" parent="15" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="241" parent="19" name="id">
+      <column id="204" parent="16" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="242" parent="19" name="createBy">
+      <column id="205" parent="16" name="createBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="243" parent="19" name="createDate">
+      <column id="206" parent="16" name="createDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="244" parent="19" name="deleted">
+      <column id="207" parent="16" name="deleted">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="245" parent="19" name="enabled">
+      <column id="208" parent="16" name="enabled">
         <data-type>bit(1)</data-type>
       </column>
-      <column id="246" parent="19" name="updateBy">
+      <column id="209" parent="16" name="updateBy">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="247" parent="19" name="updateDate">
+      <column id="210" parent="16" name="updateDate">
         <data-type>datetime</data-type>
       </column>
-      <column id="248" parent="19" name="firstName">
+      <column id="211" parent="16" name="firstName">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="249" parent="19" name="lastName">
+      <column id="212" parent="16" name="lastName">
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="250" parent="19" name="PRIMARY">
+      <key id="213" parent="16" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="251" parent="20" name="column_1">
-        <mandatory>1</mandatory>
-        <data-type>timestamp</data-type>
-        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
-      </column>
     </database-model>
   </data-source>
 </component>

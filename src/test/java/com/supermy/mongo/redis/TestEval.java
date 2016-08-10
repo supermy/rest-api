@@ -1,4 +1,4 @@
-package com.supermy.geo.mongo.redis;
+package com.supermy.mongo.redis;
 
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.util.StopWatch;

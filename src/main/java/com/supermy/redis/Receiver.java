@@ -1,4 +1,4 @@
-package com.supermy.geo.redis;
+package com.supermy.redis;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

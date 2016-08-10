@@ -16,7 +16,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "my_auths")
-public class Authorities extends BaseObj{
+public class Authority extends BaseObj{
 
     /**
      * auth_login auth_XXX auth_welcome
@@ -38,7 +38,7 @@ public class Authorities extends BaseObj{
     private String module;
 
 
-    public Authorities() {
+    public Authority() {
     }
 
     public String getName() {

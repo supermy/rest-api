@@ -1,4 +1,4 @@
-package com.supermy.geo.mongo;
+package com.supermy.mongo;
 
 
 import com.mongodb.MongoClient;
@@ -21,7 +21,7 @@ import java.util.Arrays;
 /**
  * Created by moyong on 15/4/1.
  */
-@Configuration
+//@Configuration
 @PropertySource("classpath:application.properties")
 public class MongoConfiguration {
 

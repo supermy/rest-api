@@ -1,5 +1,33 @@
 MobileApp
 =========
+2016-08-05
+    注销mongo 的异步调用；
+    注销redis and mongo 的调用；
+    //@Configuration
+    @PropertySource("classpath:application.properties")
+    public class MongoConfiguration {
+    
+    //@Configuration
+    public class RedisConfiguration {
+    
+    用户管理：
+    http://127.0.0.1:9006/form/rest/user
+    
+2016-07-21
+    domain 元数据
+    http://127.0.0.1:9006/form/rest/webmetas?domainName=com.supermy.security.domain.Resource
+    
+
+2016-07-20
+    增加资源数据
+    权限数据管理；
+    用户管理
+    角色管理
+    群组管理
+    权限管理
+    资源管理
+    
+    
 2016-07-19
     增加健康控制：
     http://127.0.0.1:9006/form/rest/health
@@ -8,6 +36,7 @@ MobileApp
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-actuator</artifactId>
             </dependency>
+            
     更新测试方案
         @RunWith(SpringJUnit4ClassRunner.class)
         @SpringApplicationConfiguration(classes = Application.class)
@@ -20,6 +49,11 @@ MobileApp
             <scope>test</scope>
         </dependency>
      
+    ------------------------------------
+    com.supermy.geo已经移植到push-server;代码暂不删除。
+    
+    完成rbac 权限模型样例数据
+    
     
     
 2016-07-18

@@ -12,6 +12,8 @@ import javax.persistence.*;
 
 /**
  * 角色表
+ * admin
+ * user
  */
 @Entity
 @Table(name = "my_roles")

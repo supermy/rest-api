@@ -1,4 +1,4 @@
-package com.supermy.geo.mongo;
+package com.supermy.mongo;
 
 import org.springframework.data.geo.Box;
 import org.springframework.data.geo.Circle;

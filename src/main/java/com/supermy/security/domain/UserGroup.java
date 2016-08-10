@@ -14,7 +14,7 @@ import javax.persistence.*;
  * 角色表当做码表使用;
  */
 @Entity
-@Table(name = "my_user_groups",  uniqueConstraints = @UniqueConstraint( columnNames = { "group_", "username" }))
+@Table(name = "my_user_groups",  uniqueConstraints = @UniqueConstraint( columnNames = { "group_", "user_id" }))
 public class UserGroup extends BaseObj{
 
 //    @Id
@@ -24,7 +24,7 @@ public class UserGroup extends BaseObj{
 //    private Integer userGroupId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "username", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Column(name = "group_", nullable = false, length = 45)

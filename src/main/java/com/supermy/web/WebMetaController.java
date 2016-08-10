@@ -17,6 +17,7 @@ package com.supermy.web;
 
 import com.supermy.service.WebMetaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +32,7 @@ import java.util.Map;
  *
  */
 @RestController
+@EnableAutoConfiguration
 class WebMetaController {
 
     private static final String BASE_MAPPING = "/webmetas";
@@ -40,6 +42,7 @@ class WebMetaController {
 
     /**
      * http://127.0.0.1:9006/form/rest/webmetas?domain=User
+     * http://127.0.0.1:9006/form/rest/webmetas?domainName=com.supermy.security.domain.User
      *
      *
      * @param domainName

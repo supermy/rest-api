@@ -1,4 +1,4 @@
-package com.supermy.geo.redis;
+package com.supermy.redis;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +16,7 @@ import redis.clients.jedis.JedisPoolConfig;
 
 import java.util.concurrent.CountDownLatch;
 
-@Configuration
+//@Configuration
 public class RedisConfiguration {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(RedisConfiguration.class);

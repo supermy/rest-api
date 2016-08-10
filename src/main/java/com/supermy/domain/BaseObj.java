@@ -46,7 +46,6 @@ public class BaseObj implements Serializable {
 	 */
 	@JsonFormat(timezone = "GMT+8")
 	private Date updateDate=new Date();
-
 	@Column(length = 20)
 	private String updateBy="system";
 
@@ -54,11 +53,9 @@ public class BaseObj implements Serializable {
 		return id;
 	}
 
-
 	public long getId() {
 		return id;
 	}
-
 	public void setId(long id) {
 		this.id = id;
 	}
@@ -66,7 +63,6 @@ public class BaseObj implements Serializable {
 	public Boolean getDeleted() {
 		return deleted;
 	}
-
 	public void setDeleted(Boolean deleted) {
 		this.deleted = deleted;
 	}
@@ -74,7 +70,6 @@ public class BaseObj implements Serializable {
 	public Date getCreateDate() {
 		return createDate;
 	}
-
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
@@ -82,7 +77,6 @@ public class BaseObj implements Serializable {
 	public String getCreateBy() {
 		return createBy;
 	}
-
 	public void setCreateBy(String createBy) {
 		this.createBy = createBy;
 	}
@@ -90,7 +84,6 @@ public class BaseObj implements Serializable {
 	public Date getUpdateDate() {
 		return updateDate;
 	}
-
 	public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
 	}
@@ -98,7 +91,6 @@ public class BaseObj implements Serializable {
 	public String getUpdateBy() {
 		return updateBy;
 	}
-
 	public void setUpdateBy(String updateBy) {
 		this.updateBy = updateBy;
 	}
@@ -106,7 +98,6 @@ public class BaseObj implements Serializable {
 	public Boolean getEnabled() {
 		return enabled;
 	}
-
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
 	}
