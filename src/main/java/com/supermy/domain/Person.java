@@ -17,6 +17,17 @@ public class Person extends BaseObj{//extends ResourceSupport {
 	//@Column(columnDefinition = "VARCHAR(20) comment '名'")
 	private String lastName;
 
+	public Person( String first, String last) {
+
+		super();
+		firstName = first;
+		lastName = last;
+
+	}
+
+	public Person() {
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}

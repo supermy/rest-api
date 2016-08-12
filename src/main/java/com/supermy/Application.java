@@ -3,7 +3,11 @@ package com.supermy;
 import com.supermy.db.DataBaseConfig;
 //import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
 //import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
+import com.supermy.db.UploadConfig;
+import com.supermy.web.FileUploadController;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 //import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -14,10 +18,16 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
+import org.springframework.util.FileSystemUtils;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import javax.servlet.MultipartConfigElement;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -35,6 +45,7 @@ import java.util.concurrent.Executors;
 //@ComponentScan({"**.service","hello","**.web"})  //有问题
 @ComponentScan
 public class Application  extends WebMvcConfigurerAdapter {
+	private static final org.slf4j.Logger log = LoggerFactory.getLogger(Application.class);
 
 //	@Bean
 //	@ConditionalOnMissingBean(SingleSignOutHttpSessionListener.class)
@@ -118,6 +129,12 @@ public class Application  extends WebMvcConfigurerAdapter {
 	@Bean(name = "bipool")
 	public ExecutorService executorService() {
 		return Executors.newFixedThreadPool(bipool);
+	}
+
+
+	@Bean
+	public CommandLineRunner UploadConfig(){
+		return new UploadConfig();
 	}
 
 

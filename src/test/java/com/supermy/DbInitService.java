@@ -16,11 +16,11 @@ public class DbInitService {
     private PersonRepository repository;
     @PostConstruct
     public void init() {
-        Person person1 = new Person(1, "Mert", "Caliskan", "emailaddress@gmail.com");
+        Person person1 = new Person( "Mert", "Caliskan");
         repository.save(person1);
-        Person person2 = new Person(2, "Steve", "Millidge", "emailaddress1@c2b2.co.uk");
+        Person person2 = new Person("Steve", "Millidge");
         repository.save(person2);
-        Person person3 = new Person(3, "Andrew", "Pielage", "emailaddress2@c2b2.co.uk");
+        Person person3 = new Person( "Andrew", "Pielage");
         repository.save(person3);
     }
 }

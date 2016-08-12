@@ -37,7 +37,8 @@ public class RestExceptionProcessor {
     {
         HttpHeaders headers = new HttpHeaders();
         headers.set("HeaderKey","HeaderDetails");
-        return new ResponseEntity<String>("Rest Controller Advice Example",headers,HttpStatus.ACCEPTED);
+
+        return new ResponseEntity<String>(exception.getMessage(),headers,HttpStatus.ACCEPTED);
     }
 
     //@ExceptionHandler(Exception.class)
