@@ -35,7 +35,7 @@ import java.util.Arrays;
  */
 //@Component
 //@Qualifier("mymongo")
-//@PropertySource("classpath:application.properties")
+@PropertySource("classpath:application.properties")
 public class MongoRepository {
 
 //

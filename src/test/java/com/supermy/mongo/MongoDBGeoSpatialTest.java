@@ -6,7 +6,7 @@ import static org.junit.Assert.assertThat;
 
 import java.util.List;
 
-import com.supermy.Application;
+import com.Application;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

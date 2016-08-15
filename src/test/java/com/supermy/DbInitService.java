@@ -10,11 +10,11 @@ import javax.annotation.PostConstruct;
 /**
  * Created by moyong on 16/8/8.
  */
-@Service
+//@Service
 public class DbInitService {
-    @Autowired
+    ///@Autowired
     private PersonRepository repository;
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         Person person1 = new Person( "Mert", "Caliskan");
         repository.save(person1);

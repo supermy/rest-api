@@ -9,12 +9,7 @@ import com.supermy.domain.BaseObj;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 //, catalog = "hibnatedb"
 
@@ -24,6 +19,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "my_users")
 public class User extends BaseObj{
+
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "avatar_id", nullable = true)
+    private Avatar  avatar;
+
     /**
      * 登陆名称
      */

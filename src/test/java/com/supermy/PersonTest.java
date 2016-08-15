@@ -5,6 +5,7 @@ package com.supermy;
 import com.supermy.db.DataBaseConfig;
 import com.supermy.domain.Person;
 import com.supermy.repository.PersonRepository;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Configuration;

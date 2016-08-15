@@ -22,7 +22,7 @@ public class Avatar extends BaseObj{
     private String webpath;
 
     @Column
-    private Integer filesize;
+    private Long filesize;
 
     @Column(length = 240)
     private String syspath;
@@ -46,13 +46,6 @@ public class Avatar extends BaseObj{
         this.webpath = webpath;
     }
 
-    public Integer getFilesize() {
-        return filesize;
-    }
-
-    public void setFilesize(Integer filesize) {
-        this.filesize = filesize;
-    }
 
     public String getSyspath() {
         return syspath;
@@ -60,5 +53,13 @@ public class Avatar extends BaseObj{
 
     public void setSyspath(String syspath) {
         this.syspath = syspath;
+    }
+
+    public Long getFilesize() {
+        return filesize;
+    }
+
+    public void setFilesize(Long filesize) {
+        this.filesize = filesize;
     }
 }
