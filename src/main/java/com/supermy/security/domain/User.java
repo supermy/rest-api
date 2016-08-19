@@ -4,7 +4,12 @@ package com.supermy.security.domain;
  * Created by moyong on 15/1/9.
  */
 
+import com.alibaba.fastjson.annotation.JSONField;
+import com.alibaba.fastjson.annotation.JSONPOJOBuilder;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.supermy.domain.BaseObj;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -22,8 +27,12 @@ public class User extends BaseObj{
 
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "avatar_id", nullable = true)
+//    @RestResource(exported = false)
+//    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+//    @JsonIdentityReference(alwaysAsId = true)
+    //@JsonManagedReference
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "avatar_id")
     private Avatar  avatar;
 
     /**
@@ -41,9 +50,15 @@ public class User extends BaseObj{
 //    @Column(name = "enabled", nullable = false)
 //    private boolean enabled;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    //@RestResource(exported = false)
+//    @JsonManagedReference
+//    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "pkId")
+//    @JsonIdentityReference(alwaysAsId = true)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     private Set<UserRole> userRole = new HashSet<UserRole>(0);
 
+//    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "pkId")
+//    @JsonIdentityReference(alwaysAsId = true)
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private Set<UserGroup> userGroup = new HashSet<UserGroup>(0);
 
@@ -105,6 +120,14 @@ public class User extends BaseObj{
 //        this.enabled = enabled;
 //    }
 
+
+    public Avatar getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(Avatar avatar) {
+        this.avatar = avatar;
+    }
 
     public Set<UserRole> getUserRole() {
         return this.userRole;

@@ -1,63 +1,68 @@
+--头像数据
+INSERT INTO my_avatar(id,filename,filesize,webpath,syspath,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (1,'乌克兰','22','upload-dir/1.jpg','', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_avatar(id,filename,filesize,webpath,syspath,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (2,'转化率','22','upload-dir/2.png','', 1,NOW(),NOW(),'system1','system2');
 --用户数据
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (1,'jamesmo','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','张山', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (1,'jamesmo',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','张山', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (2,'alex2','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四2', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (2,'alex2',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四2', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (3,'alex3','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四3', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (3,'alex3',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四3', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (4,'alex4','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四4', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (4,'alex4',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四4', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (5,'alex5','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四5', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (5,'alex5',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四5', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (6,'alex6','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四6', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (6,'alex6',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四6', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (7,'alex7','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四7', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (7,'alex7',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四7', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (8,'alex8','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四8', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (8,'alex8',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四8', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (9,'alex9','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四9', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (9,'alex9',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四9', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (10,'alex10','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四10', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (10,'alex10',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四10', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (11,'alex11','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四11', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (11,'alex11',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四11', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (12,'alex12','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四12', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (12,'alex12',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四12', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (13,'alex13','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四13', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (13,'alex13',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四13', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (14,'alex14','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四14', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (14,'alex14',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四14', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (15,'alex15','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四15', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (15,'alex15',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四15', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (16,'alex16','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四16', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (16,'alex16',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四16', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (17,'alex17','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四17', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (17,'alex17',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四17', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (18,'alex18','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四18', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (18,'alex18',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四18', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (19,'alex19','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四19', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (19,'alex19',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四19', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_users(id,username,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (20,'alex20','$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四20', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_users(id,username,avatar_id,password,namecn,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (20,'alex20',1,'$2a$10$04TVADrR6/SPLBjsK0N30.Jf5fNjBugSACeGv1S69dZALR7lSov0y','李四20', 1,NOW(),NOW(),'system1','system2');
 
 
 

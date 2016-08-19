@@ -4,6 +4,9 @@ import com.supermy.db.DataBaseConfig;
 //import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
 //import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
 import com.supermy.db.UploadConfig;
+import com.supermy.domain.BaseObj;
+import com.supermy.security.domain.Avatar;
+import com.supermy.security.domain.User;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -16,6 +19,8 @@ import org.springframework.context.annotation.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
+import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -128,6 +133,31 @@ public class Application  extends WebMvcConfigurerAdapter {
 	@Bean
 	public CommandLineRunner UploadConfig(){
 		return new UploadConfig();
+	}
+
+
+	/**
+	 * id 生成到json 中
+	 * @return
+     */
+	@Bean
+	public RepositoryRestConfigurer repositoryRestConfigurer() {
+
+		return new RepositoryRestConfigurerAdapter() {
+			@Override
+			public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
+				//必须是子类才有效
+				config.exposeIdsFor(BaseObj.class,User.class,Avatar.class);
+
+//				@Override
+//				public boolean isIdExposedFor(Class<?> domainType) {
+//					return this.exposeIdsFor.contains(domainType);
+//				}
+
+			}
+
+		};
+
 	}
 
 

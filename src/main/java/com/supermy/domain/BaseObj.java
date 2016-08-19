@@ -1,6 +1,9 @@
 package com.supermy.domain;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,6 +20,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 @MappedSuperclass
 public class BaseObj implements Serializable {
 
+//	@RestResource(exported = false)
+//	@JSONField
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -49,6 +54,7 @@ public class BaseObj implements Serializable {
 	@Column(length = 20)
 	private String updateBy="system";
 
+	//@JsonProperty("id")
 	public long getPkId() {
 		return id;
 	}

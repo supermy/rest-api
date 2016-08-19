@@ -9,6 +9,7 @@ import com.supermy.security.domain.User;
 
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.method.P;
 import org.springframework.security.access.prepost.PostFilter;
@@ -16,6 +17,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;
 
+//@RestResource(exported = false)
 @RepositoryRestResource(collectionResourceRel = "user", path = "user")
 public interface UserRepository extends JpaRepository<User, Long> , JpaSpecificationExecutor<User> {
 

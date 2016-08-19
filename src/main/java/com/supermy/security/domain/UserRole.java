@@ -3,7 +3,10 @@ package com.supermy.security.domain;
 /**
  * Created by moyong on 15/1/9.
  */
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.supermy.domain.BaseObj;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -24,6 +27,9 @@ public class UserRole implements Serializable {
             unique = true, nullable = false)
     private Integer userRoleId;
 
+ //   @JsonBackReference
+//    @JsonManagedReference
+//    @RestResource(exported = true)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
