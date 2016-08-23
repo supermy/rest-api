@@ -35,6 +35,7 @@ public class RestExceptionProcessor {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> getSQLError(Exception exception)
     {
+		exception.printStackTrace();
         HttpHeaders headers = new HttpHeaders();
         headers.set("HeaderKey","HeaderDetails");
 
@@ -44,6 +45,7 @@ public class RestExceptionProcessor {
     //@ExceptionHandler(Exception.class)
     public @ResponseBody
 	ErrorInfo handleEmployeeNotFoundException(HttpServletRequest request, Exception ex){
+		ex.printStackTrace();
 
         ErrorInfo response = new ErrorInfo(request.getRequestURL().toString(),ex.getMessage());
 
@@ -55,6 +57,7 @@ public class RestExceptionProcessor {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public String handleIOException(NullPointerException ex) {
+		ex.printStackTrace();
         return ClassUtils.getShortName(ex.getClass()) + ex.getMessage();
     }
 
@@ -63,6 +66,7 @@ public class RestExceptionProcessor {
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
     public ErrorInfo handleUnexpectedServerError(HttpServletRequest request,RuntimeException ex) {
+		ex.printStackTrace();
 
         ErrorInfo response = new ErrorInfo(request.getRequestURL().toString(),ex.getMessage());
 
@@ -72,6 +76,7 @@ public class RestExceptionProcessor {
     @ExceptionHandler(IOException.class)
     @ResponseBody
     public String exceptionIO(Exception e) {
+		e.printStackTrace();
 
         //..
         return "error";
@@ -80,6 +85,7 @@ public class RestExceptionProcessor {
     @ExceptionHandler(SQLException.class)
     @ResponseBody
     public String exceptionSQL(Exception e) {
+		e.printStackTrace();
 
         //..
         return "error";
@@ -95,6 +101,7 @@ public class RestExceptionProcessor {
 	@ResponseStatus(value= HttpStatus.NOT_FOUND)
 	@ResponseBody
 	public ErrorInfo personNotFound(HttpServletRequest req, PersonNotFoundException ex) {
+		ex.printStackTrace();
 		
 		String errorMessage = localizeErrorMessage("error.no.smartphone.id");
 		
@@ -108,7 +115,7 @@ public class RestExceptionProcessor {
 	@ResponseStatus(value= HttpStatus.BAD_REQUEST)
 	@ResponseBody
 	public ErrorFormInfo handleMethodArgumentNotValid(HttpServletRequest req, MethodArgumentNotValidException ex) {
-		
+		ex.printStackTrace();
 		String errorMessage = localizeErrorMessage("error.bad.arguments");
 		String errorURL = req.getRequestURL().toString();
 		
