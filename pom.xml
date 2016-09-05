@@ -20,13 +20,7 @@
         <version>1.3.6.RELEASE</version>
     </parent>
 
-    <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent &ndash;&gt;-->
-    <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-parent</artifactId>-->
-        <!--<version>1.3.7.RELEASE</version>-->
-        <!--<type>pom</type>-->
-    <!--</dependency>-->
+
 
 
     <properties>
@@ -46,9 +40,29 @@
 
         <scala.version>2.11.7</scala.version>
 
+
+
+
+
+
     </properties>
 
     <dependencies>
+
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-parent</artifactId>-->
+            <!--<version>1.3.7.RELEASE</version>-->
+            <!--<type>pom</type>-->
+        <!--</dependency>-->
+
+        <!-- 数据数据实时同步 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
 
         <!-- 监控
             Spring Boot还提供了很多高阶线上JMX功能， 可以用HTTP端口来管理，监控我们的应用。并且提供了一些自动监控，健康报表，这个对于运维来说比较实用。
@@ -217,12 +231,15 @@
             <version>${webjars-jquery.version}</version>
         </dependency>
 
-        <!-- 多参数构造查询 -->
+        <!--
+        多参数构造查询
+        依赖hibernate jpa 2.0 ,与现有的2.1冲突
         <dependency>
             <groupId>net.kaczmarzyk</groupId>
             <artifactId>specification-arg-resolver</artifactId>
             <version>0.6.0</version>
         </dependency>
+        -->
 
         <!--
         包含 spring-boot-starter-web
