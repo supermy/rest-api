@@ -1,5 +1,15 @@
 MobileApp
 =========
+2016-09-09
+    spring-boot增加session保存Redis
+    spring-boot-redis 集群测试 OK.
+    
+    
+2016-08-19
+    支持domain 多包扫描；
+    增加部分注解；
+    
+    
 2016-08-05
     注销mongo 的异步调用；
     注销redis and mongo 的调用；
@@ -90,6 +100,7 @@ MobileApp
     删除：result response:......{"DATA":{},"PAGE":{"page":{"totalElements":2}}}
 
 2016-07-13
+    参数数组查询使用in金勋查询；
     http://127.0.0.1:9006/form/rest/channel_auth/search/findByIdList?pkId=1&pkId=2
     http://172.16.71.56:9006/form/rest/channel_auth/search/findByIdList?pkId=1&pkId=2
 

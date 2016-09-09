@@ -27,12 +27,12 @@ public class User extends BaseObj{
 
 
 
-//    @RestResource(exported = false)
+    @RestResource(exported = false)
 //    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 //    @JsonIdentityReference(alwaysAsId = true)
     //@JsonManagedReference
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "avatar_id")
+    @JoinColumn(name = "avatar_id",foreignKey = @ForeignKey(name="null"))
     private Avatar  avatar;
 
     /**

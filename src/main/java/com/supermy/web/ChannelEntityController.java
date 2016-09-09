@@ -40,6 +40,7 @@ import java.util.Arrays;
  *
  */
 @RestController
+//@RequestMapping(value = "/order")
 class ChannelEntityController {
 
     private static final String BASE_MAPPING = "/filter";

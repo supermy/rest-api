@@ -2,8 +2,8 @@ package com.supermy.repository;
 
 import com.supermy.domain.Channel;
 import com.supermy.domain.Person;
-import net.kaczmarzyk.spring.data.jpa.domain.Like;
-import net.kaczmarzyk.spring.data.jpa.web.annotation.Spec;
+//import net.kaczmarzyk.spring.data.jpa.domain.Like;
+//import net.kaczmarzyk.spring.data.jpa.web.annotation.Spec;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
