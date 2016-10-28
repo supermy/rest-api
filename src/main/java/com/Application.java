@@ -1,10 +1,15 @@
 package com;
 
+import com.supermy.MyInterceptor1;
+import com.supermy.MyInterceptor2;
+import com.supermy.db.Cmd2Config;
+import com.supermy.db.CmdConfig;
 import com.supermy.db.DataBaseConfig;
 //import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
 //import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
 import com.supermy.db.UploadConfig;
 import com.supermy.domain.BaseObj;
+import com.supermy.repository.BaseRepositoryFactoryBean;
 import com.supermy.security.domain.Avatar;
 import com.supermy.security.domain.User;
 import org.slf4j.LoggerFactory;
@@ -23,6 +28,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -35,12 +41,13 @@ import java.util.concurrent.Executors;
 
 @Configuration
 @EnableMongoRepositories
-@EnableJpaRepositories
+//@EnableJpaRepositories
 @Import({RepositoryRestMvcConfiguration.class,DataBaseConfig.class})
 @PropertySource("classpath:application.properties")
 @EnableAutoConfiguration
 @EnableWebMvc
 //@ComponentScan({"**.service","hello","**.web"})  //有问题
+@EnableJpaRepositories(repositoryFactoryBeanClass = BaseRepositoryFactoryBean.class)   //添加自定义方法
 @ComponentScan
 public class Application  extends WebMvcConfigurerAdapter {
 	private static final org.slf4j.Logger log = LoggerFactory.getLogger(Application.class);
@@ -135,6 +142,15 @@ public class Application  extends WebMvcConfigurerAdapter {
 		return new UploadConfig();
 	}
 
+	@Bean
+	public CommandLineRunner CmdConfig(){
+		return new CmdConfig();
+	}
+
+	@Bean
+	public CommandLineRunner Cmd2Config(){
+		return new Cmd2Config();
+	}
 
 	/**
 	 * id 生成到json 中
@@ -159,6 +175,17 @@ public class Application  extends WebMvcConfigurerAdapter {
 		};
 
 	}
+
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		// 多个拦截器组成一个拦截器链
+		// addPathPatterns 用于添加拦截规则
+		// excludePathPatterns 用户排除拦截
+		registry.addInterceptor(new MyInterceptor1()).addPathPatterns("/rest/**");
+		registry.addInterceptor(new MyInterceptor2()).addPathPatterns("/form/rest/**");
+		super.addInterceptors(registry);
+	}
+
 
 
 }

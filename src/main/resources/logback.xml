@@ -25,6 +25,7 @@
 	<logger name="org.springframework.security" level="ERROR" />
 	<logger name="org.springframework.data.rest.webmvc.RepositoryEntityController" level="DEBUG" />
 	<logger name="com.supermy.web" level="DEBUG" />
+	<logger name="org.springframework.data.rest.webmvc" level="DEBUG" />
 
 
 

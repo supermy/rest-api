@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>日志浏览</title>
+
+    <link rel="stylesheet" type="text/css" href="/form/rest/webjars/extjs/4.2.1.883/resources/css/ext-all.css"/>
+
+    <link href="/form/rest/webjars/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+    <script src="/form/rest/webjars/extjs/4.2.1.883/bootstrap.js"></script>
+
+    <script type="text/javascript" src="/form/rest/public/rowedit-fix.js"></script>
+
+    <!--<script type="text/javascript" src="app.js"></script>-->
+    <script type="text/javascript" src="/form/rest/public/logviewer/App.js"></script>
+    <script>
+        Ext.Loader.setConfig({enabled: true});
+        Ext.Loader.setPath('Ext.ux', '../ux');
+        Ext.Loader.setPath('Ext.ux', 'ext4.2/ux');
+        Ext.Loader.setPath('LogViewer', 'logviewer/app');
+
+        Ext.Loader.setConfig({
+            enabled: true,
+            disableCaching: false
+        });
+    </script>
+</head>
+<body>
+
+<form id="exportform" method="post" target="exportframe">
+    <input type="hidden" id="excelconfig" name="fileName" value="" />
+</form>
+
+
+</body>
+</html>

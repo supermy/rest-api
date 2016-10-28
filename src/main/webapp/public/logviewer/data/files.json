@@ -1,0 +1,32 @@
+[
+  {
+    "fileName": "file1.log",
+    "fileSize": 43897,
+    "fileDate": "2009-06-17T16:31:49.123+0000",
+    "filePath": "file1.log",
+    "leaf": true
+  }, {
+  "fileName": "file2.log",
+  "fileSize": 43897,
+  "fileDate": "2009-06-17T16:31:49.123+0000",
+  "filePath": "file2.log",
+  "leaf": true
+}, {
+  "fileName": "sc",
+  "fileSize": "dir",
+  "fileDate": "2009-06-17T16:31:49.123+0000",
+  "children":[{
+    "fileName": "file3.log",
+    "fileSize": 43897,
+    "fileDate": "2009-06-17T16:31:49.123+0000",
+    "filePath": "sc/file3.log",
+    "leaf": true
+  }, {
+    "fileName": "file4.log",
+    "fileSize": 43897,
+    "fileDate": "2009-06-17T16:31:49.123+0000",
+    "filePath": "sc/file4.log",
+    "leaf": true
+  }]
+}
+]

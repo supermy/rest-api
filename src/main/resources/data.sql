@@ -104,165 +104,180 @@ VALUES (2,2,'ROLE_USER', 1,NOW(),NOW(),'system1','system2');
 
 
 
---资源数据 用微信app 做测试数据
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (1,'微信','http://127.0.0.1/form/rest/weixin.html','StaticPage','1001','分类信息交流', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (2,'通讯录','http://127.0.0.1/form/rest/txl.html','StaticPage','1002','微信好友列表/标签/群聊/公众号', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (3,'发现','discover','menu','1100','探索功能列表', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (4,'朋友圈','http://127.0.0.1/form/rest/friends.html','StaticPage','1101','好友信息列表', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (5,'扫一扫','scan','operation','1102','扫描二维码/街景/封面/翻译', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (6,'摇一摇','shake','operation','1103','人/歌曲/电视', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (7,'附近的人','http://127.0.0.1/form/rest/peoplenearby.html','StaticPage','1104','附近的人', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (8,'漂流瓶','http://127.0.0.1/form/rest/drifting bottle.html','StaticPage','1105',' 漂流瓶', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (9,'购物','http://127.0.0.1/form/rest/shopping.html','StaticPage','1106',' 购物', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (10,'游戏','http://127.0.0.1/form/rest/game.html','StaticPage','1106','游戏', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (12,'我','me','menu','1200','我', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (13,'个人信息','information','menu','1300','个人信息', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (14,'头像','photo','element','1301','个性照片', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (15,'名字','name','element','1302','名字', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (16,'微信号','name','element','1303','名字', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (17,'我的二维码','QRcode','element','1304','二维码', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (18,'我的地址','address','element','1305','我的地址', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (19,'性别','sex','element','1306',' 性别', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (20,'地区','region','element','1307',' 地区', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (21,'个性签名','signature','element','1308',' 个性签名', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (22,'LinkedIn 账号','http://127.0.0.1/form/rest/linkedin.html.','StaticPage','1308',' LinkedIn 账号', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (23,'Watch 微信','watchweixin','menu','1500','手表微信', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (24,'手表联系人设置','http://127.0.0.1/form/rest/watchfriend.html','StaticPage','1501','手表联系人设置', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (25,'朋友圈表盘','http://127.0.0.1/form/rest/watchfriendinfo.html','StaticPage','1502','朋友圈表盘', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (26,'小信号','http://127.0.0.1/form/rest/watchfriendmsg.html','StaticPage','1503','小信号', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (27,'回复模板','http://127.0.0.1/form/rest/watchtemplate.html','StaticPage','1504','回复模板', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (28,'使用技巧','http://127.0.0.1/form/rest/watchmethod.html','StaticPage','1505','使用技巧', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (29,'收藏','http://127.0.0.1/form/rest/favorites.html','StaticPage','1201',' 我收藏的图文信息', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (30,'钱包','money','menu','1600',' 钱包支付', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (31,'卡包','card','menu','1700',' 钱包支付', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (32,'表情','http://127.0.0.1/form/rest/photo.html','StaticPage','1800','表情', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (33,'设置','card','menu','1800','设置', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (34,'账号与安全','card','menu','1900','账号与安全', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (35,'qq 号','qq','element','1901','qq 号', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (36,'手机号','phone','element','1902','手机号', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (37,'邮箱地址','email','element','1903','邮箱地址', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (38,'声音锁','voicelock','element','1904','声音锁', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (39,'微信密码','weixinpassword','element','1905','微信密码', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (40,'账号保护','accountprotect','element','1906','账号保护', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (41,'微信安全中心','Security Center','menu','2000','微信安全中心', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (42,'找回账号密码','http://127.0.0.1/form/rest/findpasswd.html','StaticPage','2001','找回账号密码', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (43,'解封账号','http://127.0.0.1/form/rest/unlockaccount.html','StaticPage','2002','解封账号', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (44,'冻结账号','http://127.0.0.1/form/rest/lockaccount.html','StaticPage','2003','冻结账号', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (45,'解冻账号','http://127.0.0.1/form/rest/unlockaccount1.html','StaticPage','2004','解冻账号', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (46,'投诉维权','http://127.0.0.1/form/rest/Complaintsrights.html','StaticPage','2005','投诉维权', 1,NOW(),NOW(),'system1','system2');
+--资源数据 用微信app 做测试数据 支持7个层级[1-9a-z] 1-0-0-0-0-0-0
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (1,'resource','微信','http://127.0.0.1/form/rest/weixin.html','StaticPage','1000000','分类信息交流', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (47,'新消息通知','newmessages','menu','2100','新消息通知', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (48,'接收消息通知','recivermessage','element','2100','接收消息通知', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (49,'通知显示消息详情','messageinfo','element','2101','通知显示消息详情', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (50,'功能消息免打扰','message','element','2102','功能消息免打扰', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (51,'声音','voice','element','2103','声音', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (52,'震动','shock','element','2104','震动', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (53,'朋友圈照片更新','photoupdate','element','2105','朋友圈照片更新', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (54,'隐私','private','menu','2200','隐私', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (55,'加我为朋友时候需要通过验证','','element','2201','加我为朋友时候需要通过验证', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (56,'通过qq 号搜索到我','','element','2202','通过qq 号搜索到我', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (57,'可通过手机号搜索到我','','element','2203','可通过手机号搜索到我', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (58,'向我推荐通讯录朋友','','element','2204','向我推荐通讯录朋友', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (59,'通过微信号搜索到我','','element','2205','通过微信号搜索到我', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (60,'通讯录黑名单','','element','2206','通讯录黑名单', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (61,'不让他看我的朋友圈','','element','2207','不让他看我的朋友圈', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (62,'不看他的朋友圈','','element','2208','不看他的朋友圈', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (63,'允许陌生人看10张照片','','element','2209','允许陌生人看10张照片', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (2,'resource','通讯录','http://127.0.0.1/form/rest/txl.html','StaticPage','2000000','微信好友列表/标签/群聊/公众号', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (64,'通用','common','menu','2300','通用', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (65,'多语言','','element','2301','加我为朋友时候需要通过验证', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (66,'字体大小','','element','2302','通过qq 号搜索到我', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (67,'聊天背景','','element','2303','可通过手机号搜索到我', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (68,'我的表情','','element','2304','向我推荐通讯录朋友', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (69,'朋友圈小视屏','','element','2305','通过微信号搜索到我', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (70,'听筒模式','','element','2306','通讯录黑名单', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (71,'功能','','element','2307','不让他看我的朋友圈', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (72,'聊天记录迁移','','element','2308','不看他的朋友圈', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (73,'清理微信存储空间','','element','2309','允许陌生人看10张照片', 1,NOW(),NOW(),'system1','system2');
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (74,'清空聊天记录','','element','2310','允许陌生人看10张照片', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (75,'帮助与反馈','common','menu','2400','通用', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (3,'resource','发现','discover','menu','3000000','探索功能列表', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (76,'关于微信','common','menu','2500','通用', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (4,'3000000','朋友圈','http://127.0.0.1/form/rest/friends.html','StaticPage','3100000','好友信息列表', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (5,'3000000','扫一扫','scan','operation','3200000','扫描二维码/街景/封面/翻译', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (6,'3000000','摇一摇','shake','operation','3300000','人/歌曲/电视', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (7,'3000000','附近的人','http://127.0.0.1/form/rest/peoplenearby.html','StaticPage','3400000','附近的人', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (8,'3000000','漂流瓶','http://127.0.0.1/form/rest/drifting bottle.html','StaticPage','3500000',' 漂流瓶', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (9,'3000000','购物','http://127.0.0.1/form/rest/shopping.html','StaticPage','3600000',' 购物', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (10,'3000000','游戏','http://127.0.0.1/form/rest/game.html','StaticPage','3700000','游戏', 1,NOW(),NOW(),'system1','system2');
 
-INSERT INTO my_resources(id,name,uri,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (77,'退出登录','common','menu','2600','通用', 1,NOW(),NOW(),'system1','system2');
+
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (12,'resource','我','me','menu','4000000','我', 1,NOW(),NOW(),'system1','system2');
+
+
+
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (13,'4000000','个人信息','information','menu','4100000','个人信息', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (14,'4100000','头像','photo','element','4110000','个性照片', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (15,'4100000','名字','name','element','4120000','名字', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (16,'4100000','微信号','name','element','4130000','名字', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (17,'4100000','我的二维码','QRcode','element','4140000','二维码', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (18,'4100000','我的地址','address','element','4150000','我的地址', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (19,'4100000','性别','sex','element','4160000',' 性别', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (20,'4100000','地区','region','element','4170000',' 地区', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (21,'4100000','个性签名','signature','element','4180000',' 个性签名', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (22,'4100000','LinkedIn 账号','http://127.0.0.1/form/rest/linkedin.html.','StaticPage','4190000',' LinkedIn 账号', 1,NOW(),NOW(),'system1','system2');
+
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (23,'4000000','Watch 微信','watchweixin','menu','4200000','手表微信', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (24,'4200000','手表联系人设置','http://127.0.0.1/form/rest/watchfriend.html','StaticPage','4210000','手表联系人设置', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (25,'4200000','朋友圈表盘','http://127.0.0.1/form/rest/watchfriendinfo.html','StaticPage','4220000','朋友圈表盘', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (26,'4200000','小信号','http://127.0.0.1/form/rest/watchfriendmsg.html','StaticPage','4230000','小信号', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (27,'4200000','回复模板','http://127.0.0.1/form/rest/watchtemplate.html','StaticPage','4240000','回复模板', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (28,'4200000','使用技巧','http://127.0.0.1/form/rest/watchmethod.html','StaticPage','4250000','使用技巧', 1,NOW(),NOW(),'system1','system2');
+
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (29,'4000000','收藏','http://127.0.0.1/form/rest/favorites.html','StaticPage','4300000',' 我收藏的图文信息', 1,NOW(),NOW(),'system1','system2');
+
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (30,'4000000','钱包','money','menu','4400000',' 钱包支付', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (31,'4000000','卡包','card','menu','4500000',' 钱包支付', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (32,'4000000','表情','http://127.0.0.1/form/rest/photo.html','StaticPage','4600000','表情', 1,NOW(),NOW(),'system1','system2');
+
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (33,'4000000','设置','card','menu','4700000','设置', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (34,'4700000','账号与安全','card','menu','4710000','账号与安全', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (35,'4710000','qq 号','qq','element','4711000','qq 号', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (36,'4710000','手机号','phone','element','4712000','手机号', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (37,'4710000','邮箱地址','email','element','4713000','邮箱地址', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (38,'4710000','声音锁','voicelock','element','4714000','声音锁', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (39,'4710000','微信密码','weixinpassword','element','4715000','微信密码', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (40,'4710000','账号保护','accountprotect','element','4716000','账号保护', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (41,'4710000','微信安全中心','Security Center','menu','4717000','微信安全中心', 1,NOW(),NOW(),'system1','system2');
+--菜单太深应该设置在单页面进行全文检索
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (42,'4717000','找回账号密码','http://127.0.0.1/form/rest/findpasswd.html','StaticPage','4717100','找回账号密码', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (43,'4717000','解封账号','http://127.0.0.1/form/rest/unlockaccount.html','StaticPage','4717200','解封账号', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (44,'4717000','冻结账号','http://127.0.0.1/form/rest/lockaccount.html','StaticPage','4717300','冻结账号', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (45,'4717000','解冻账号','http://127.0.0.1/form/rest/unlockaccount1.html','StaticPage','4717400','解冻账号', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (46,'4717000','投诉维权','http://127.0.0.1/form/rest/Complaintsrights.html','StaticPage','4717500','投诉维权', 1,NOW(),NOW(),'system1','system2');
+
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (47,'4700000','新消息通知','newmessages','menu','4720000','新消息通知', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (48,'4720000','接收消息通知','recivermessage','element','4721000','接收消息通知', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (49,'4720000','通知显示消息详情','messageinfo','element','4722000','通知显示消息详情', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (50,'4720000','功能消息免打扰','message','element','4723000','功能消息免打扰', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (51,'4720000','声音','voice','element','4724000','声音', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (52,'4720000','震动','shock','element','4725000','震动', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (53,'4720000','朋友圈照片更新','photoupdate','element','4726000','朋友圈照片更新', 1,NOW(),NOW(),'system1','system2');
+
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (54,'4700000','隐私','private','menu','4730000','隐私', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (55,'4730000','加我为朋友时候需要通过验证','','element','4731000','加我为朋友时候需要通过验证', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (56,'4730000','通过qq 号搜索到我','','element','4732000','通过qq 号搜索到我', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (57,'4730000','可通过手机号搜索到我','','element','4733000','可通过手机号搜索到我', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (58,'4730000','向我推荐通讯录朋友','','element','4734000','向我推荐通讯录朋友', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (59,'4730000','通过微信号搜索到我','','element','4735000','通过微信号搜索到我', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (60,'4730000','通讯录黑名单','','element','4736000','通讯录黑名单', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (61,'4730000','不让他看我的朋友圈','','element','4737000','不让他看我的朋友圈', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (62,'4730000','不看他的朋友圈','','element','4738000','不看他的朋友圈', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (63,'4730000','允许陌生人看10张照片','','element','4739000','允许陌生人看10张照片', 1,NOW(),NOW(),'system1','system2');
+
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (64,'4700000','通用','common','menu','4740000','通用', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (65,'4740000','多语言','','element','4741000','加我为朋友时候需要通过验证', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (66,'4740000','字体大小','','element','4742000','通过qq 号搜索到我', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (67,'4740000','聊天背景','','element','4743000','可通过手机号搜索到我', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (68,'4740000','我的表情','','element','4744000','向我推荐通讯录朋友', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (69,'4740000','朋友圈小视屏','','element','4745000','通过微信号搜索到我', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (70,'4740000','听筒模式','','element','4746000','通讯录黑名单', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (71,'4740000','功能','','element','4747000','不让他看我的朋友圈', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (72,'4740000','聊天记录迁移','','element','4748000','不看他的朋友圈', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (73,'4740000','清理微信存储空间','','element','4749000','允许陌生人看10张照片', 1,NOW(),NOW(),'system1','system2');
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (74,'4740000','清空聊天记录','','element','474a000','允许陌生人看10张照片', 1,NOW(),NOW(),'system1','system2');
+
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (75,'4700000','帮助与反馈','common','menu','4745000','通用', 1,NOW(),NOW(),'system1','system2');
+
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (76,'4700000','关于微信','common','menu','4746000','通用', 1,NOW(),NOW(),'system1','system2');
+
+INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
+VALUES (77,'4700000','退出登录','common','menu','4747000','通用', 1,NOW(),NOW(),'system1','system2');
 
 
 --权限数据
