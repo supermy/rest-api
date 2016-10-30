@@ -4,14 +4,9 @@ package com.supermy.security.domain;
  * Created by moyong on 15/1/9.
  */
 
-import com.alibaba.fastjson.annotation.JSONField;
-import com.alibaba.fastjson.annotation.JSONPOJOBuilder;
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.supermy.domain.BaseObj;
+import com.supermy.base.domain.BaseObj;
 import org.springframework.data.rest.core.annotation.RestResource;
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;

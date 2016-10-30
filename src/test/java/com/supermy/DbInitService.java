@@ -1,11 +1,7 @@
 package com.supermy;
 
-import com.supermy.domain.Person;
-import com.supermy.repository.PersonRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.PostConstruct;
+import com.supermy.base.domain.Person;
+import com.supermy.base.repository.PersonRepository;
 
 /**
  * Created by moyong on 16/8/8.

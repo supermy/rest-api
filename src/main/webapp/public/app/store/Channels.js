@@ -25,8 +25,9 @@ Ext.define('AM.store.Channels', {
     model: 'AM.model.Channel',
 
     proxy: {
+
         type: 'rest',
-        url: webserver+'/channel_auth/filter', //带filter 查询的支撑后台
+        url: webserver+'/channel_auth', //带filter 查询的支撑后台
         limitParam: 'size',
         reader: {
             type: 'json',
@@ -38,14 +39,14 @@ Ext.define('AM.store.Channels', {
         },
 
 
-        processResponse: processResponse,//针对spring-data-rest 的返回值统一预处理为DATA
-        doRequest: doRequest,//
-        afterRequest: afterRequest  //操作提示统一处理
+        processResponse: processResponse//,//针对spring-data-rest 的返回值统一预处理为DATA
+        //doRequest: doRequest,//
+        //afterRequest: afterRequest  //操作提示统一处理
     },
 
     listeners: {
 
-        metachange: metachange,
+       // metachange: metachange,
         beforeload: beforeload  //提交参数预处理
     }
 

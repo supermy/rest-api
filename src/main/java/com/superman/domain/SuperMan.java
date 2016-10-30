@@ -1,7 +1,7 @@
 package com.superman.domain;
 
-import com.supermy.domain.BaseObj;
-import com.supermy.domain.Parent;
+import com.supermy.base.domain.BaseObj;
+import com.supermy.base.domain.Parent;
 
 import javax.persistence.*;
 

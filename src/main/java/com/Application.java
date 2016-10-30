@@ -1,15 +1,15 @@
 package com;
 
-import com.supermy.MyInterceptor1;
-import com.supermy.MyInterceptor2;
-import com.supermy.db.Cmd2Config;
-import com.supermy.db.CmdConfig;
-import com.supermy.db.DataBaseConfig;
+import com.supermy.base.aop.MyInterceptor1;
+import com.supermy.base.aop.MyInterceptor2;
+import com.supermy.base.db.Cmd2Config;
+import com.supermy.base.db.CmdConfig;
+import com.supermy.base.db.DataBaseConfig;
 //import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
 //import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
-import com.supermy.db.UploadConfig;
-import com.supermy.domain.BaseObj;
-import com.supermy.repository.BaseRepositoryFactoryBean;
+import com.supermy.base.db.UploadConfig;
+import com.supermy.base.domain.BaseObj;
+import com.supermy.base.repository.BaseRepositoryFactoryBean;
 import com.supermy.security.domain.Avatar;
 import com.supermy.security.domain.User;
 import org.slf4j.LoggerFactory;
@@ -91,8 +91,14 @@ public class Application  extends WebMvcConfigurerAdapter {
 	 * 静态资源权限配置
 	 */
 	private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {
-			"classpath:/META-INF/resources/", "classpath:/resources/",
-			"classpath:/static/", "classpath:/public/" ,"public","resources","static","html"};
+			"classpath:/META-INF/resources/",
+			"classpath:/resources/",
+			"classpath:/static/",
+			"classpath:/public/" ,
+			"public",
+			"resources",
+			"static",
+			"html"};
 
 
 	/**

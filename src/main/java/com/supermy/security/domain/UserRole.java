@@ -3,12 +3,6 @@ package com.supermy.security.domain;
 /**
  * Created by moyong on 15/1/9.
  */
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.supermy.domain.BaseObj;
-import org.springframework.data.rest.core.annotation.RestResource;
-
-import static javax.persistence.GenerationType.IDENTITY;
 
 import javax.persistence.*;
 import java.io.Serializable;

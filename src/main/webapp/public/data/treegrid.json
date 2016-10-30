@@ -1,0 +1,5 @@
+
+[
+    {"id": 1,"pId":0, "claName":"Ed",  "lowScroe":11, "topScore":22 ,"email": "ed@sencha.com"},
+    {"id": 2,"pId":1, "claName":"Tommy","lowScroe":11, "topScore":22, "email": "tommy@sencha.com"}
+  ]

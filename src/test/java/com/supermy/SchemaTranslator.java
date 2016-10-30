@@ -1,7 +1,7 @@
 package com.supermy;
 
 
-import com.supermy.domain.Person;
+import com.supermy.base.domain.Person;
 import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.dialect.Dialect;

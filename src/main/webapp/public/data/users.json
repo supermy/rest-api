@@ -1,7 +1,36 @@
 {
   "success": true,
-  "users": [
-    {"id": 1, "name": 'Ed',    "email": "ed@sencha.com"},
-    {"id": 2, "name": 'Tommy', "email": "tommy@sencha.com"}
+  "message": "Loaded data",
+  "data": [
+    {
+      "id": 1,
+      "first": "Fred",
+      "last": "Flintstone",
+      "email": "fred@flintstone.com"
+    },
+    {
+      "id": 3,
+      "first": "Pebbles",
+      "last": "Flintstone",
+      "email": "pebbles@flintstone.com"
+    },
+    {
+      "id": 4,
+      "first": "Barney",
+      "last": "Rubble",
+      "email": "barney@rubble.com"
+    },
+    {
+      "id": 5,
+      "first": "Betty",
+      "last": "Rubble",
+      "email": "betty@rubble.com"
+    },
+    {
+      "id": 6,
+      "first": "BamBam",
+      "last": "Rubble",
+      "email": "bambam@rubble.com"
+    }
   ]
 }

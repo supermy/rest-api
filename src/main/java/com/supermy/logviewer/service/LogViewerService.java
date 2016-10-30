@@ -9,31 +9,38 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 
 
 import com.supermy.logviewer.domain.FileNode;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
 @Service
 public class LogViewerService {
 
     protected final Logger log = LogManager.getLogger(getClass());
-    private String logDir="/Users/moyong/docker-share/logs";
+    private String logDir;//="/Users/moyong/docker-share/logs";
     private String logDirPathName;
-
+    @Resource
+    private Environment env;
     //@Autowired private MyProperties myProperties;
 
     /**
      * If the log directory changes, restart app in order to get the new property
      * into this service.
      */
-//    @PostConstruct  通过@PostConstruct 和 @PreDestroy 方法 实现初始化和销毁bean之前进行的操作
-//    public void init() {
+    @PostConstruct  //通过@PostConstruct 和 @PreDestroy 方法 实现初始化和销毁bean之前进行的操作
+    public void init() {
+
+        System.out.println(env.getRequiredProperty("logviewer.path"));
+
+        logDir = env.getRequiredProperty("logviewer.path");
 //        logDir = myProperties.getProperty(PropertyConstants.TOMCAT_LOG_DIR);
-//    }
+    }
 
     /**
      * Get a list of all the files, including files in subdirectories.

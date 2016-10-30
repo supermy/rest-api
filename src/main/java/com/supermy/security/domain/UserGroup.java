@@ -4,7 +4,7 @@ package com.supermy.security.domain;
  * Created by moyong on 15/1/9.
  */
 
-import com.supermy.domain.BaseObj;
+import com.supermy.base.domain.BaseObj;
 
 import javax.persistence.*;
 

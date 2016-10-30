@@ -1,0 +1,190 @@
+<!doctype html>
+
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Account Manager</title>
+
+    <link rel="stylesheet" type="text/css" href="/form/rest/webjars/extjs/4.2.1.883/resources/css/ext-all.css" />
+
+    <!--<link href="/form/rest/webjars/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>-->
+
+    <script src="/form/rest/webjars/extjs/4.2.1.883/bootstrap.js"></script>
+
+    <!--<script type="text/javascript" src="app.js"></script>-->
+</head>
+<body>
+
+<script type="text/javascript" >
+//    //树节点配置[root>>children]每个节点有： text显示文本, leaf是否是叶子, expanded是否展开，等属性。
+//    var store = Ext.create('Ext.data.TreeStore', {
+//        root: {
+//            expanded: true,
+//            children: [
+//                { text: "detention", leaf: true },
+//                { text: "homework", expanded: true, children: [
+//                    { text: "book", leaf: true },
+//                    { text: "alegrbra", leaf: true}
+//                ] },
+//                { text: "tickets", leaf: true }
+//            ]
+//        }
+//    });
+//    //创建TreePanel rootVisible表示根节点是否显示
+////    Ext.create('Ext.tree.Panel', {
+////        title: 'Simple Tree',
+////        width: 200,
+////        height: 150,
+////        store: store,
+////        rootVisible: false,
+////        renderTo: Ext.getBody()
+////    });
+//
+//    //不需要每个参数一一解释，要注意的是每个参数都有一个默认值，没有明确配置的时候，使用的是默认值。
+//    //树节点的Itemclick事件l
+//    Ext.create('Ext.tree.Panel', {
+//        title: 'Simple Tree',
+//        width: 200,
+//        height: 150,
+//        store: store,
+//        rootVisible: false,
+//        renderTo: Ext.getBody(),
+//        listeners: {
+//            itemclick:function(view,record,item,index,e,eOpts){
+//                // 从record item index 等参数中我们可以获得大部分满足我们应用的信息
+//                if(record.get('text')=='book'){// do somethings……};
+//                    if(record.get('text')=='detetion'){//do something……}
+//                    }
+//                }
+//
+//            }}
+//
+//    });
+
+
+    Ext.define('KitchenSink.model.tree.Task', {
+        extend: 'Ext.data.Model',
+        fields: [{
+            name: 'task',
+            type: 'string'
+        }, {
+            name: 'user',
+            type: 'string'
+        }, {
+            name: 'duration',
+            type: 'float'
+        }, {
+            name: 'done',
+            type: 'boolean'
+        }]
+    });
+
+    Ext.define('KitchenSink.view.tree.TreeGrid', {
+        extend: 'Ext.tree.Panel',
+
+        requires: [
+            'Ext.data.*',
+            'Ext.grid.*',
+            'Ext.tree.*',
+            'Ext.ux.CheckColumn'
+        ],
+        xtype: 'tree-grid',
+
+
+        title: 'Core Team Projects',
+        height: 300,
+        useArrows: true,
+        rootVisible: false,
+        multiSelect: true,
+        singleExpand: true,
+
+        layout: {
+            type : 'vbox',
+            align: 'stretch'
+        },
+        border: true,
+
+
+        initComponent: function() {
+            this.width = 600;
+
+            Ext.apply(this, {
+                store: new Ext.data.TreeStore({
+                    model: KitchenSink.model.tree.Task,
+                    proxy: {
+                        type: 'ajax',
+                        url: 'http://127.0.0.1:9006/form/rest/public/data/datatree.json'
+                    },
+                    folderSort: true
+                }),
+                columns: [{
+                    xtype: 'treecolumn', //this is so we know which column will show the tree
+                    text: 'Task',
+                    flex: 2,
+                    sortable: true,
+                    dataIndex: 'task'
+                },{
+                    //we must use the templateheader component so we can use a custom tpl
+                    xtype: 'templatecolumn',
+                    text: 'Duration',
+                    flex: 1,
+                    sortable: true,
+                    dataIndex: 'duration',
+                    align: 'center',
+                    //add in the custom tpl for the rows
+                    tpl: Ext.create('Ext.XTemplate', '{duration:this.formatHours}', {
+                        formatHours: function(v) {
+                            if (v < 1) {
+                                return Math.round(v * 60) + ' mins';
+                            } else if (Math.floor(v) !== v) {
+                                var min = v - Math.floor(v);
+                                return Math.floor(v) + 'h ' + Math.round(min * 60) + 'm';
+                            } else {
+                                return v + ' hour' + (v === 1 ? '' : 's');
+                            }
+                        }
+                    })
+                },{
+                    text: 'Assigned To',
+                    flex: 1,
+                    dataIndex: 'user',
+                    sortable: true
+                }, {
+                    xtype: 'checkcolumn',
+                    header: 'Done',
+                    dataIndex: 'done',
+                    width: 55,
+                    stopSelection: false,
+                    menuDisabled: true
+                }, {
+                    text: 'Edit',
+                    width: 55,
+                    menuDisabled: true,
+                    xtype: 'actioncolumn',
+                    tooltip: 'Edit task',
+                    align: 'center',
+                    icon: 'resources/images/edit_task.png',
+                    handler: function(grid, rowIndex, colIndex, actionItem, event, record, row) {
+                        Ext.Msg.alert('Editing' + (record.get('done') ? ' completed task' : '') , record.get('task'));
+                    },
+                    // Only leaf level tasks may be edited
+                    isDisabled: function(view, rowIdx, colIdx, item, record) {
+                        return !record.data.leaf;
+                    }
+                }]
+            });
+            this.callParent();
+        }
+    });
+
+    var mainGrid = Ext.create('KitchenSink.view.tree.TreeGrid');
+    mainGrid.render(Ext.getBody());
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!doctype html>
+
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Account Manager</title>
+
+    <link rel="stylesheet" type="text/css" href="/form/rest/webjars/extjs/4.2.1.883/resources/css/ext-all.css"/>
+
+    <!--<link href="/form/rest/webjars/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>-->
+
+    <script src="/form/rest/webjars/extjs/4.2.1.883/bootstrap.js"></script>
+
+    <!--<script type="text/javascript" src="app.js"></script>-->
+</head>
+<body>
+
+<h1>Panel</h1>
+<div id="div1" class="content">
+</div>
+
+<script type="text/javascript">
+    Ext.define('Supermy.model.tree.Task', {
+        extend: 'Ext.data.Model',
+        fields: [{
+            name: 'task',
+            type: 'string'
+        }, {
+            name: 'user',
+            type: 'string'
+        }, {
+            name: 'duration',
+            type: 'float'
+        }, {
+            name: 'done',
+            type: 'boolean'
+        }]
+    });
+
+    Ext.define('Supermy.view.tree.TreeGrid', {
+        extend: 'Ext.tree.Panel',
+
+        //title: 'Edit Plants',
+        // frame: true,
+//        layout: "border",
+
+
+        requires: [
+            'Ext.selection.CellModel',
+            'Ext.data.*',
+            'Ext.grid.*',
+            'Ext.tree.*',
+            'Ext.form.*',
+            'Ext.ux.CheckColumn',
+            'Supermy.model.tree.Task'
+        ],
+        xtype: 'tree-grid',
+
+
+        title: 'Core Team Projects',
+//        height: 300,
+        useArrows: true,
+        rootVisible: false,
+        multiSelect: true,
+        singleExpand: true,
+
+
+
+        initComponent: function () {
+            this.width = 600;
+            this.cellEditing = new Ext.grid.plugin.CellEditing({
+                clicksToEdit: 1
+            });
+
+            Ext.apply(this, {
+                plugins: [this.cellEditing],
+                viewConfig: {
+                    plugins: {
+                        ptype: 'treeviewdragdrop',
+                        containerScroll: true
+                    }
+                },
+                store: new Ext.data.TreeStore({
+                    //autoDestroy: true,
+                    model: Supermy.model.tree.Task,
+                    proxy: {
+                        type: 'ajax',
+                        url: 'http://127.0.0.1:9006/form/rest/public/data/datatree.json'
+                    },
+                    folderSort: true
+                }),
+                columns: [{
+                    xtype: 'treecolumn', //this is so we know which column will show the tree
+                    text: 'Task',
+                    flex: 2,
+                    sortable: true,
+                    dataIndex: 'task',
+                    editor: {
+                        allowBlank: false
+                    }
+                }, {
+                    //we must use the templateheader component so we can use a custom tpl
+                    xtype: 'templatecolumn',
+                    text: 'Duration',
+                    flex: 1,
+                    sortable: true,
+                    dataIndex: 'duration',
+                    align: 'center',
+                    editor: {
+                        allowBlank: false
+                    },
+                    //add in the custom tpl for the rows
+                    tpl: Ext.create('Ext.XTemplate', '{duration:this.formatHours}', {
+                        formatHours: function (v) {
+                            if (v < 1) {
+                                return Math.round(v * 60) + ' mins';
+                            } else if (Math.floor(v) !== v) {
+                                var min = v - Math.floor(v);
+                                return Math.floor(v) + 'h ' + Math.round(min * 60) + 'm';
+                            } else {
+                                return v + ' hour' + (v === 1 ? '' : 's');
+                            }
+                        }
+                    })
+                }, {
+                    text: 'Assigned To',
+                    flex: 1,
+                    dataIndex: 'user',
+                    sortable: true,
+                    editor: {
+                        allowBlank: false
+                    }
+                }, {
+                    xtype: 'checkcolumn',
+                    header: 'Done',
+                    dataIndex: 'done',
+                    width: 55,
+                    stopSelection: false,
+                    menuDisabled: true
+                }, {
+                    text: 'Delete',
+                    width: 55,
+                    menuDisabled: true,
+                    xtype: 'actioncolumn',
+                    tooltip: 'Edit task',
+                    align: 'center',
+                    icon: '../resources/images/icons/delete.png',
+                    handler: function (grid, rowIndex, colIndex, actionItem, event, record, row) {
+                        grid.getStore().remove(rowIndex);
+
+                        Ext.Msg.alert('Delete' + (record.get('done') ? ' completed task' : ''), record.get('task'));
+                    },
+                    // Only leaf level tasks may be edited
+                    isDisabled: function (view, rowIdx, colIdx, item, record) {
+                        return !record.data.leaf;
+                    }
+                }
+                ]
+                ,
+                selModel: {
+                    selType: 'cellmodel'
+                }
+                ,
+                tbar: [{
+                    text: 'Add Plant',
+                    scope: this,
+                    handler: this.onAddClick
+                }, {
+                    text: 'Expand All',
+                    scope: this,
+                    handler: this.onExpandAllClick
+                }, {
+                    text: 'Collapse All',
+                    scope: this,
+                    handler: this.onCollapseAllClick
+                }]
+            });
+            this.callParent();
+
+            this.on('afterlayout', this.loadStore, this, {
+                delay: 1,
+                single: true
+            })
+
+        }
+
+        ,
+
+
+        onExpandAllClick: function () {
+            var me = this,
+                    toolbar = me.down('toolbar');
+
+            me.getEl().mask('Expanding tree...');
+            toolbar.disable();
+
+            this.expandAll(function () {
+                me.getEl().unmask();
+                toolbar.enable();
+            });
+        },
+
+        onCollapseAllClick: function () {
+            var toolbar = this.down('toolbar');
+
+            toolbar.disable();
+            this.collapseAll(function () {
+                toolbar.enable();
+            });
+        },
+
+        loadStore: function () {
+            this.getStore().load({
+                // store loading is asynchronous, use a load listener or callback to handle results
+                callback: this.onStoreLoad
+            });
+        },
+
+//        onStoreLoad: function(){
+//            Ext.Msg.show({
+//                title: 'Store Load Callback',
+//                msg: 'store was loaded, data available for processing',
+//                icon: Ext.Msg.INFO,
+//                buttons: Ext.Msg.OK
+//            });
+//        },
+//
+        onAddClick: function () {
+            // Create a model instance
+//            var rec = new Supermy.model.tree.Task({
+//                task: 'New Plant 1',
+//                user: 'Mostly Shady',
+//                duration: 2.0,
+//                done: false
+//                //Ext.Date.clearTime(new Date()),
+//            });
+
+            var treeStore = this.getStore();
+            var selectedNode = this.selModel.getLastSelected();
+//            for (var i = 0 ; i < len ; i++) {
+               var newNode= selectedNode.appendChild({
+                    task: 'New Plant 1',
+                    user: 'Mostly Shady',
+                    duration: 2.0,
+                    done: false
+                }, true);       // --> set suppressevents true
+
+                // --> Ext.data.Tree in TreeStore has node hash!
+                treeStore.tree.registerNode(newNode, false);
+//            };
+
+//
+//            console.log(this.getTreeStore());
+//
+//            this.getStore().insert(0, rec);
+//            this.cellEditing.startEditByPosition({
+//                row: 0,
+//                column: 0
+//            });
+        },
+
+        onRemoveClick: function (grid, rowIndex) {
+            this.getStore().removeAt(rowIndex);
+        }
+
+    });
+
+    //    var mainGrid = Ext.create('Supermy.view.tree.TreeGrid');
+    //    mainGrid.render(Ext.getBody());
+
+    Ext.define("Custom.editWindow", {
+//        extend: "Ext.window.Window",
+        extend: "Ext.panel.Panel",
+
+        layout: "fit",
+//        layout:"form",
+
+        width: 500,
+        height: 400,
+        frame: true,
+        constrain: true,
+        modal: true,
+        autoScroll: false,
+        resizable: false,
+        closeAction: "hide",
+        buttonAlign: "center",
+        initComponent: function () {//构造函数
+            var me = this;
+            var btnSave = Ext.create('Ext.Button', {text: '保存'});
+            var btnClose = Ext.create('Ext.Button', {text: '关闭'}); //创建2个按钮
+
+            me.buttons = [btnSave, btnClose]; //添加到窗体的buttons中
+            //me.items = [grid]; //将grid添加窗体的items中
+
+            var mainGrid = Ext.create('Supermy.view.tree.TreeGrid');
+
+            me.items = [mainGrid];
+
+            btnClose.on("click", function () {
+                me.hideMe();
+            }); //关闭按钮绑定后面定义的hideme函数
+
+            me.superclass.initComponent.call(me); //调用父类的构造函数
+        },
+        hideMe: function () {
+            var me = this;
+            me.hide();
+        }
+    });
+    Ext.onReady(function () {
+        //    Ext.create('Custom.editWindow').show();
+
+        Ext.create('Custom.editWindow', {title: '我是标题', renderTo: 'div1',}).show(); //创建并设置属性
+    });
+
+</script>
+
+</body>
+</html>

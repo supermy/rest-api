@@ -4,21 +4,31 @@ package com.supermy.security.domain;
  *
  */
 
-import com.supermy.domain.BaseObj;
+import com.supermy.base.domain.BaseObj;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 //, catalog = "hibnatedb"
 
 /**
  * 资源表,菜单的子节点, ? 或者模块名称
+ * tree resoure 就是 menu;
+ * 菜单树可视化设计前端采用zTree
+ *
  */
 @Entity
 @Table(name = "my_resources")
 public class Resource extends BaseObj{
 
+    /*
+        资源树
+     */
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "pid", nullable = false)
+//    public Resource parent;
+
+    @Column(length = 10,nullable = false)
+    private String pid;
     /**
      * res_login res_XXX res_welcome
      */
@@ -39,13 +49,20 @@ public class Resource extends BaseObj{
      * 路径:/home.html /login.html /logout
      */
     @Column(length = 230,nullable = false)
-    private String uri;
+    private String url;
     /**
-     * 两级子系统编码 1001 1002 1101 1102
+     * 两级子系统编码 1001 1002 1101 1102 相当于code
      */
     @Column(length = 10,nullable = false)
     private String module;
 
+//    public boolean getLeaf() {
+//        return false;
+//    }
+//
+//    public String getChildren() {
+//        return "[{}]";
+//    }
 
     public Resource() {
     }
@@ -74,12 +91,12 @@ public class Resource extends BaseObj{
         this.remark = remark;
     }
 
-    public String getUri() {
-        return uri;
+    public String getUrl() {
+        return url;
     }
 
-    public void setUri(String uri) {
-        this.uri = uri;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getModule() {
@@ -89,4 +106,19 @@ public class Resource extends BaseObj{
     public void setModule(String module) {
         this.module = module;
     }
+
+    public String getPid() {
+        return pid;
+    }
+
+    public void setPid(String pid) {
+        this.pid = pid;
+    }
+//    public Resource getParent() {
+//        return parent;
+//    }
+//
+//    public void setParent(Resource parent) {
+//        this.parent = parent;
+//    }
 }

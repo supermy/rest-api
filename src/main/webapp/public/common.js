@@ -169,14 +169,14 @@ function processResponse(success, operation, request, response, callback, scope)
 
                 myobjson2["DATA"] = {};
                 if (!Ext.isEmpty(myobjson._embedded)) {
-                    //方法1:使用正则根据filter 特征获取数据的标签;
-                    var s = request.url;
-                    var dl=new RegExp("[a-zA-z0-9]+/(filter)","i").exec(s)[0];
-                    var datalabel=/[a-zA-z0-9]+/.exec(dl)[0];
-
-                    console.log("datalabel:......",datalabel);
-                    console.log(myobjson._embedded[datalabel]);
-                    //myobjson2["DATA"] = myobjson._embedded[datalabel];
+                    ////方法1:使用正则根据filter 特征获取数据的标签;
+                    //var s = request.url;
+                    //var dl=new RegExp("[a-zA-z0-9]+/(filter)","i").exec(s)[0];
+                    //var datalabel=/[a-zA-z0-9]+/.exec(dl)[0];
+                    //
+                    //console.log("datalabel:......",datalabel);
+                    //console.log(myobjson._embedded[datalabel]);
+                    ////myobjson2["DATA"] = myobjson._embedded[datalabel];
 
                     //方法2:获取json key;利用json的数据层次获取数据
                     for(var key in myobjson._embedded) {
