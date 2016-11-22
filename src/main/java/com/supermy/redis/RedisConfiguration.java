@@ -6,14 +6,21 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
+import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
+import org.springframework.scripting.support.ResourceScriptSource;
 import redis.clients.jedis.JedisPoolConfig;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 //@Configuration
@@ -88,8 +95,32 @@ public class RedisConfiguration {
 
         StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
 
-        //StringRedisTemplate template = stringRedisTemplate();
-        System.out.println(template.getConnectionFactory());
+		//testMsg(ctx, template);
+
+		//template.ex
+
+		Collections.singletonList("key");
+
+		String[] param = new String[] {"张三"};
+		List<String> params = Arrays.asList(param);
+
+		String luascript="local a=1;return a";
+
+		DefaultRedisScript<String> redisScript = new DefaultRedisScript<String>();
+		redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("/redis/hello.lua")));
+		redisScript.setResultType(String.class);
+
+		//RedisScript<String> redisScript = new DefaultRedisScript<String>("classpath:/com/supermy/redis/hello.lua", String.class);
+		System.out.println("=====================");
+		Object object = template.execute(redisScript, params,new Object[] {});
+		System.out.println("--------------------:"+object);
+
+
+	}
+
+	private static void testMsg(ApplicationContext ctx, StringRedisTemplate template) throws InterruptedException {
+		//StringRedisTemplate template = stringRedisTemplate();
+		System.out.println(template.getConnectionFactory());
 
 		CountDownLatch latch = ctx.getBean(CountDownLatch.class);
 

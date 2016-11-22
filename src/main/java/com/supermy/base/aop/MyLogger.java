@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 /**
  * Created by moyong on 16/10/26.
  */
-@Aspect
-@Component
+//@Aspect
+//@Component
 public class MyLogger {
 
     /** Handle to the log file */

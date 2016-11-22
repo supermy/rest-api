@@ -7,6 +7,7 @@ package com.supermy.security.domain;
 import com.supermy.base.domain.BaseObj;
 
 import javax.persistence.*;
+import java.util.List;
 
 //, catalog = "hibnatedb"
 
@@ -53,8 +54,14 @@ public class Resource extends BaseObj{
     /**
      * 两级子系统编码 1001 1002 1101 1102 相当于code
      */
-    @Column(length = 10,nullable = false)
+    @Column(length = 50,nullable = false,unique = true)
     private String module;
+
+    @Transient
+    private boolean leaf;
+
+    @Transient
+    private List<Resource> children;
 
 //    public boolean getLeaf() {
 //        return false;
@@ -121,4 +128,21 @@ public class Resource extends BaseObj{
 //    public void setParent(Resource parent) {
 //        this.parent = parent;
 //    }
+
+
+    public boolean isLeaf() {
+        return leaf;
+    }
+
+    public void setLeaf(boolean leaf) {
+        this.leaf = leaf;
+    }
+
+    public List<Resource> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<Resource> children) {
+        this.children = children;
+    }
 }

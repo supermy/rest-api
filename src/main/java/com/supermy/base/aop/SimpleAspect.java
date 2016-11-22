@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 /**
  * Created by moyong on 16/10/26.
  */
-@Component
-@Aspect
+//@Component
+//@Aspect
 public class SimpleAspect {
     @Pointcut("execution(* com.supermy.base.web..*.*(..))")
     public void pointCut() {

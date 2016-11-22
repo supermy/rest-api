@@ -271,13 +271,13 @@ INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,u
 VALUES (74,'4740000','清空聊天记录','','element','474a000','允许陌生人看10张照片', 1,NOW(),NOW(),'system1','system2');
 
 INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (75,'4700000','帮助与反馈','common','menu','4745000','通用', 1,NOW(),NOW(),'system1','system2');
+VALUES (75,'4700000','帮助与反馈','common','menu','4750000','通用', 1,NOW(),NOW(),'system1','system2');
 
 INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (76,'4700000','关于微信','common','menu','4746000','通用', 1,NOW(),NOW(),'system1','system2');
+VALUES (76,'4700000','关于微信','common','menu','4760000','通用', 1,NOW(),NOW(),'system1','system2');
 
 INSERT INTO my_resources(id,pid,name,url,type,module,remark,enabled,createDate,updateDate,createBy,updateBy)
-VALUES (77,'4700000','退出登录','common','menu','4747000','通用', 1,NOW(),NOW(),'system1','system2');
+VALUES (77,'4700000','退出登录','common','menu','4770000','通用', 1,NOW(),NOW(),'system1','system2');
 
 
 --权限数据

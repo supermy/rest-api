@@ -35,16 +35,46 @@ public class RestExceptionProcessor {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> getSQLError(Exception exception)
     {
+		System.out.println("debug: getSQLError");
+
+		String errmsg = findException(exception.getCause());
+		System.out.println("debug:"+exception.fillInStackTrace().getMessage());
+
 		exception.printStackTrace();
+
         HttpHeaders headers = new HttpHeaders();
         headers.set("HeaderKey","HeaderDetails");
 
-        return new ResponseEntity<String>(exception.getMessage(),headers,HttpStatus.ACCEPTED);
+
+//		Throwable[] suppressed = exception.getSuppressed();
+//		for (Throwable se:
+//				suppressed) {
+//			System.out.println("debug:"+se.getMessage());
+//
+//		}
+
+
+		return new ResponseEntity<String>(errmsg==null?exception.getCause().getMessage():errmsg,headers,HttpStatus.ACCEPTED);
     }
+
+	private String findException(Throwable cause){
+
+		if(cause==null) {
+			return null;
+		}
+		System.out.println("===="+cause);
+		if(cause.toString().indexOf("jdbc")>=1) {
+			return cause.getMessage();
+		}
+		System.out.println("*****"+cause.getCause());
+		return findException(cause.getCause());
+	}
 
     //@ExceptionHandler(Exception.class)
     public @ResponseBody
 	ErrorInfo handleEmployeeNotFoundException(HttpServletRequest request, Exception ex){
+		System.out.println("debug: handleEmployeeNotFoundException");
+
 		ex.printStackTrace();
 
         ErrorInfo response = new ErrorInfo(request.getRequestURL().toString(),ex.getMessage());
@@ -57,6 +87,8 @@ public class RestExceptionProcessor {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public String handleIOException(NullPointerException ex) {
+		System.out.println("debug: handleIOException");
+
 		ex.printStackTrace();
         return ClassUtils.getShortName(ex.getClass()) + ex.getMessage();
     }
@@ -66,9 +98,13 @@ public class RestExceptionProcessor {
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
     public ErrorInfo handleUnexpectedServerError(HttpServletRequest request,RuntimeException ex) {
+		System.out.println("debug: handleUnexpectedServerError");
+		String errmsg = findException(ex.getCause());
+		System.out.println("debug: handleUnexpectedServerError   ---"+errmsg);
+
 		ex.printStackTrace();
 
-        ErrorInfo response = new ErrorInfo(request.getRequestURL().toString(),ex.getMessage());
+        ErrorInfo response = new ErrorInfo(request.getRequestURL().toString(),errmsg==null?ex.getCause().getMessage():errmsg);
 
         return response;
     }
@@ -76,6 +112,8 @@ public class RestExceptionProcessor {
     @ExceptionHandler(IOException.class)
     @ResponseBody
     public String exceptionIO(Exception e) {
+		System.out.println("debug: exceptionIO");
+
 		e.printStackTrace();
 
         //..
@@ -85,6 +123,8 @@ public class RestExceptionProcessor {
     @ExceptionHandler(SQLException.class)
     @ResponseBody
     public String exceptionSQL(Exception e) {
+		System.out.println("debug: exceptionSQL");
+
 		e.printStackTrace();
 
         //..
@@ -101,6 +141,8 @@ public class RestExceptionProcessor {
 	@ResponseStatus(value= HttpStatus.NOT_FOUND)
 	@ResponseBody
 	public ErrorInfo personNotFound(HttpServletRequest req, PersonNotFoundException ex) {
+		System.out.println("debug: personNotFound");
+
 		ex.printStackTrace();
 		
 		String errorMessage = localizeErrorMessage("error.no.smartphone.id");
@@ -115,6 +157,8 @@ public class RestExceptionProcessor {
 	@ResponseStatus(value= HttpStatus.BAD_REQUEST)
 	@ResponseBody
 	public ErrorFormInfo handleMethodArgumentNotValid(HttpServletRequest req, MethodArgumentNotValidException ex) {
+		System.out.println("debug: handleMethodArgumentNotValid");
+
 		ex.printStackTrace();
 		String errorMessage = localizeErrorMessage("error.bad.arguments");
 		String errorURL = req.getRequestURL().toString();
@@ -138,6 +182,8 @@ public class RestExceptionProcessor {
 	 * @return {@link java.util.List} of {@link FieldErrorDTO} items
 	 */
 	public List<FieldErrorDTO> populateFieldErrors(List<FieldError> fieldErrorList) {
+		System.out.println("debug: populateFieldErrors");
+
 		List<FieldErrorDTO> fieldErrors = new ArrayList<FieldErrorDTO>();
 		StringBuilder errorMessage = new StringBuilder("");
 
