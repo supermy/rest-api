@@ -108,6 +108,8 @@ public class RedisConfiguration {
 
 		DefaultRedisScript<String> redisScript = new DefaultRedisScript<String>();
 		redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("/redis/hello.lua")));
+//		script.setLocation(new ClassPathResource("org/springframework/data/redis/core/script/cas.lua"));
+
 		redisScript.setResultType(String.class);
 
 		//RedisScript<String> redisScript = new DefaultRedisScript<String>("classpath:/com/supermy/redis/hello.lua", String.class);
