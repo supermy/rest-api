@@ -19,15 +19,9 @@ public class GroovyJSR223Example {
     public static void main(String args[]) {
         Binding binding = new Binding();
         GroovyShell shell = new GroovyShell(binding);
-        //直接方法调用
-        //shell.parse(new File(//))
-//        redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("/groovy/json.groovy")));
 
-        File groovyfile = null;
         try {
-            groovyfile = new ClassPathResource("/groovy/hello.groovy").getFile();
-            //Script script = shell.parse(groovyfile);
-//            script.invokeMethod();
+            File groovyfile  = new ClassPathResource("/groovy/hello.groovy").getFile();
 
             Script script = shell.parse(groovyfile);
             String joinString = (String)script.invokeMethod("join", new String[]{"A1","B2","C3"});
@@ -47,9 +41,6 @@ public class GroovyJSR223Example {
             e.printStackTrace();
             //logger.error("Database reader cound not be initialized. ", e);
         }
-
-
-
 
     }
 }

@@ -386,7 +386,7 @@ group_id</columns>
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="124" parent="8" name="uri">
+      <column id="124" parent="8" name="url">
         <mandatory>1</mandatory>
         <data-type>varchar(230)</data-type>
       </column>
