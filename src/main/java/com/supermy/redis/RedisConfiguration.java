@@ -71,14 +71,16 @@ public class RedisConfiguration {
 //
 //		jedisPool = new JedisPool(config, "127.0.0.1", 6379);
 
-
 		JedisPoolConfig poolConfig = new JedisPoolConfig();
         poolConfig.setMaxTotal(5);
         poolConfig.setTestOnBorrow(true);
         poolConfig.setTestOnReturn(true);
+
         JedisConnectionFactory ob = new JedisConnectionFactory(poolConfig);
         ob.setUsePool(true);
         ob.setHostName("127.0.0.1");
+		//ob.setPassword("REdis#186");
+
         //ob.setHostName("myredis_redis_1");//myredis is docker link-name
         ob.setPort(6379);
         return ob;
@@ -98,6 +100,7 @@ public class RedisConfiguration {
 		//testMsg(ctx, template);
 
 		//template.ex
+
 
 		Collections.singletonList("key");
 

@@ -17,8 +17,7 @@ public class GroovyScriptEngineExample {
 
             binding.setVariable("language", "Groovy");
 
-            Object value =engine.run("/groovy/SimpleScript.groovy", binding);
-
+            Object value =engine.run("src/main/resources/groovy/SimpleScript.groovy", binding);
             assert value.equals("The End");
 
         } catch (Exception e) {

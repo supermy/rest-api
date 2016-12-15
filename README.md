@@ -1,5 +1,9 @@
 MobileApp
 =========
+2016-11-29
+    完成java 动态脚本调用groovy json 示例,作为flume 插件的规则脚本使用。
+    
+    
 2016-10-28
     增加extjs 文件浏览示例
     http://127.0.0.1:9006/form/rest/public/file-browser.html
