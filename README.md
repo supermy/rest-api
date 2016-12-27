@@ -1,5 +1,12 @@
 MobileApp
 =========
+2016-12-27
+    增加druid监控；
+    
+2016-12-20
+    菜单调整
+    http://192.168.1.119:9006/form/rest/resource/search/findAllByPidOrderByModuleAsc?pid=resource
+    
 2016-11-29
     完成java 动态脚本调用groovy json 示例,作为flume 插件的规则脚本使用。
     

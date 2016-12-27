@@ -19,6 +19,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 //import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 //import org.springframework.boot.context.embedded.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -39,6 +40,11 @@ import java.util.concurrent.Executors;
 //import javax.servlet.*;
 //import java.util.Enumeration;
 
+/**
+ //在 SpringBootApplication 上使用@ServletComponentScan 注解后，Servlet、Filter、Listener 可以直接通过 @WebServlet、@WebFilter、@WebListener 注解自动注册，无需其他代码。
+ *
+ */
+@ServletComponentScan
 @Configuration
 @EnableMongoRepositories
 //@EnableJpaRepositories

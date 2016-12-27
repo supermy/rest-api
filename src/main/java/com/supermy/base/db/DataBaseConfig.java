@@ -1,5 +1,7 @@
 package com.supermy.base.db;
 
+import com.alibaba.druid.pool.DruidDataSource;
+import com.supermy.base.exception.RestExceptionProcessor;
 import org.hibernate.ejb.HibernatePersistence;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
+import java.sql.SQLException;
 import java.util.Properties;
 
 @Configuration
@@ -39,12 +42,22 @@ public class DataBaseConfig {
 	
 	@Bean
 	public DataSource dataSource() {
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		
+		DruidDataSource dataSource = new DruidDataSource();
+
+//		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+
 		dataSource.setDriverClassName(env.getRequiredProperty(PROPERTY_NAME_DATABASE_DRIVER));
 		dataSource.setUrl(env.getRequiredProperty(PROPERTY_NAME_DATABASE_URL));
 		dataSource.setUsername(env.getRequiredProperty(PROPERTY_NAME_DATABASE_USERNAME));
 		dataSource.setPassword(env.getRequiredProperty(PROPERTY_NAME_DATABASE_PASSWORD));
+
+		//# 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+		try {
+			dataSource.setFilters("stat,wall,log4j");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
 
 		return dataSource;
 	}
