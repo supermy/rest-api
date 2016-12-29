@@ -45,11 +45,19 @@ public class SchemaTranslator {
 		Dialect requiredDialect = Dialect.getDialect(config.getProperties());
 		String[] query = null;
 
-		query = config.generateDropSchemaScript(requiredDialect);
-		write(outputStream, query, FormatStyle.DDL.getFormatter());
+		//// TODO: 16/12/29 版本不支持
+//		<parent>
+//		<groupId>org.springframework.boot</groupId>
+//		<artifactId>spring-boot-starter-parent</artifactId>
+//		<version>1.4.3.RELEASE</version>
+//		<!--<version>1.3.8.RELEASE</version>-->
+//		</parent>
 
-		query = config.generateSchemaCreationScript(requiredDialect);
-		write(outputStream, query, FormatStyle.DDL.getFormatter());
+//		query = config.generateDropSchemaScript(requiredDialect);
+//		write(outputStream, query, FormatStyle.DDL.getFormatter());
+//
+//		query = config.generateSchemaCreationScript(requiredDialect);
+//		write(outputStream, query, FormatStyle.DDL.getFormatter());
 
 		return this;
 	}

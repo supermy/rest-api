@@ -314,7 +314,7 @@ insert into channel_auth (id,name,code,pwd,token,token_expire,iplist,ip_bind_tim
 values(2,'abc','abc','abc',md5('testtest192.168.59.103xxxx1234'),1,'192.168.99.101',300,60,100,100,1,NOW(),NOW(),'system1','system2');
 
 
-INSERT INTO t_person (firstName, lastName)
-VALUES ('james', 'mo');
+INSERT INTO t_person (id,firstName, lastName)
+VALUES (1,'james', 'mo');
 
 

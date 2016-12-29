@@ -3,8 +3,12 @@ package com.supermy.base.db;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.supermy.base.exception.RestExceptionProcessor;
 import org.hibernate.ejb.HibernatePersistence;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -61,6 +65,15 @@ public class DataBaseConfig {
 
 		return dataSource;
 	}
+
+
+
+//	@Primary //默认数据源
+//	@Bean
+//	@ConfigurationProperties(prefix = "spring.druid.mysql")
+//	public DataSource dataSource() {
+//		return DataSourceBuilder.create().build();
+//	}
 
 //无效
 //	@Value("classpath:channel/mysql.sql")

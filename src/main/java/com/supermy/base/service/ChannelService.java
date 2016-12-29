@@ -29,7 +29,7 @@ public class ChannelService {
 
 
 	public Page<Channel> getCollectionResource(Pageable pageable) {
-		return channelRepository.findAll(null, pageable);
+		return channelRepository.findAll(pageable);
 
 	}
 }

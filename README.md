@@ -1,7 +1,11 @@
 MobileApp
 =========
+2016-12-29
+    升级到spring-boot1.4
+    
 2016-12-27
     增加druid监控；
+    http://127.0.0.1:9006/form/rest/druid/index.html
     
 2016-12-20
     菜单调整

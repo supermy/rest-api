@@ -48,7 +48,7 @@ import java.util.concurrent.Executors;
 @Configuration
 @EnableMongoRepositories
 //@EnableJpaRepositories
-@Import({RepositoryRestMvcConfiguration.class,DataBaseConfig.class})
+//@Import({RepositoryRestMvcConfiguration.class,DataBaseConfig.class})
 @PropertySource("classpath:application.properties")
 @EnableAutoConfiguration
 @EnableWebMvc

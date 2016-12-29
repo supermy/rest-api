@@ -63,8 +63,8 @@ public class BaseRepositoryImpl<T, ID extends Serializable>
             return new PageImpl<T>(findAll());
         }
         System.out.println(pageable.toString());
-        System.out.println(findAll(null, pageable));
-        return findAll(null, pageable);
+//        System.out.println(findAll(null, pageable));
+        return super.findAll(pageable);
     }
 
 }
