@@ -5,7 +5,7 @@
 
     <groupId>com.supermy</groupId>
     <artifactId>rest-api</artifactId>
-    <version>0.6.0</version>
+    <version>0.8.0</version>
 
     <!--
     <packaging>jar</packaging>
@@ -50,29 +50,36 @@
 
     <dependencies>
 
+        <!-- https://mvnrepository.com/artifact/org.rocksdb/rocksdbjni -->
+        <dependency>
+            <groupId>org.rocksdb</groupId>
+            <artifactId>rocksdbjni</artifactId>
+            <!--<version>5.2.1</version>-->
+            <version>4.2.0</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.jsimpledb</groupId>-->
+            <!--<artifactId>jsimpledb-rocksdb</artifactId>-->
+        <!--</dependency>-->
+
         <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent &ndash;&gt;-->
         <!--<dependency>-->
             <!--<groupId>org.springframework.boot</groupId>-->
             <!--<artifactId>spring-boot-starter-parent</artifactId>-->
-            <!--<version>1.3.7.RELEASE</version>-->
+            <!--<version>1.4.3.RELEASE</version>-->
             <!--<type>pom</type>-->
         <!--</dependency>-->
 
-
-
-        <!--图计算引擎
-        https://spring.io/guides/gs/accessing-data-neo4j/
-            neo4j rest api 维护图数据库
-
+        <!--测试需要-->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-neo4j</artifactId>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-neo4j</artifactId>
-        </dependency>
-                -->
+
+
+
+
 
 
         <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->

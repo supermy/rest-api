@@ -1,5 +1,13 @@
 MobileApp
 =========
+2017-04-20
+    maven rocksdb 要与 brew list rocksdb 版本一致
+    
+2017-01-16
+    去掉neo4j 的引用；
+    单独项目处理；
+    回退到jdk1.7
+    
 2016-12-29
     升级到spring-boot1.4
     neo4j 使用自带的rest 进行图数据库的维护与引擎的调度；

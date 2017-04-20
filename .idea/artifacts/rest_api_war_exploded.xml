@@ -1,12 +1,14 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="rest-api:war exploded">
-    <output-path>$PROJECT_DIR$/target/rest-api-0.6.0</output-path>
+    <output-path>$PROJECT_DIR$/target/rest-api-0.8.0</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="rest-api" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.rocksdb:rocksdbjni:4.2.0" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.0" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.27" />
           <element id="library" level="project" name="Maven: org.codehaus.groovy:groovy-all:2.4.7" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-aop:1.4.3.RELEASE" />
@@ -128,7 +130,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/rest-api-0.6.0/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/rest-api-0.8.0/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="rest-api/web/Web" />
     </root>
